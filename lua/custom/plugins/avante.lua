@@ -1,7 +1,7 @@
 return {
   "yetone/avante.nvim",
   version = false,
-  enabled = require("nixCatsUtils").enableForCategory("ai"),
+  enabled = require("nixCatsUtils").enableForCategory("avante"),
   build = "make",
   dependencies = {
     "nvim-lua/plenary.nvim",
@@ -33,16 +33,16 @@ return {
     end,
 
     disabled_tools = {
-        -- "list_files",    -- Built-in file operations
-        -- "search_files",
-        -- "read_file",
-        -- "create_file",
-        -- "rename_file",
-        -- "delete_file",
-        -- "create_dir",
-        -- "rename_dir",
-        -- "delete_dir",
-        -- "bash",         -- Built-in terminal access
+        "list_files",    -- Built-in file operations
+        "search_files",
+        "read_file",
+        "create_file",
+        "rename_file",
+        "delete_file",
+        "create_dir",
+        "rename_dir",
+        "delete_dir",
+        "bash",         -- Built-in terminal access
     },
   }, require("nixCatsUtils").getCatOrDefault("avanteOpts", {}) or {}),
   init = function()

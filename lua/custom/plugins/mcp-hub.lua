@@ -1,5 +1,6 @@
 return {
   "ravitemer/mcphub.nvim",
+  enabled = require("nixCatsUtils").enableForCategory("avante"),
   dependencies = {
     "nvim-lua/plenary.nvim",
   },

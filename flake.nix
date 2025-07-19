@@ -177,7 +177,7 @@
               tailwindcss-language-server
               emmet-language-server
             ];
-            ai = with pkgs; [
+            avante = with pkgs; [
               (inputs.mcp-hub.packages.${pkgs.system}.default)
               nodejs
               uv
@@ -252,10 +252,15 @@
               mini-icons
             ];
 
-            ai = with pkgs.vimPlugins; [
+            avante = with pkgs.vimPlugins; [
               avante-nvim
-              blink-cmp-copilot
               (inputs.mcp-hub-nvim.packages.${pkgs.system}.default.overrideAttrs { pname = "mcphub.nvim"; })
+              nui-nvim
+              plenary-nvim
+            ];
+
+            copilot = with pkgs.vimPlugins; [
+              blink-cmp-copilot
               (inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.vimPlugins.copilot-lua)
               nui-nvim
               plenary-nvim
@@ -360,7 +365,8 @@
             # and a set of categories that you want
             # (and other information to pass to lua)
             categories = {
-              ai = true;
+              avante = false;
+              copilot = true;
               customPlugins = true;
               fileManager = true;
               general = true;
@@ -373,32 +379,6 @@
               obsidian = true;
               ollama = "http://10.27.22.20:11434";
               test = true;
-              example = {
-                youCan = "add more than just booleans";
-                toThisSet = [
-                  "and the contents of this categories set"
-                  "will be accessible to your lua with"
-                  "nixCats('path.to.value')"
-                  "see :help nixCats"
-                ];
-              };
-            };
-          };
-        nvim-phpactor =
-          { pkgs, ... }:
-          {
-            categories = {
-              ai = true;
-              customPlugins = true;
-              fileManager = true;
-              general = true;
-              gitPlugins = true;
-              go = true;
-              laravel = true;
-              obsidian = true;
-              ollama = "http://10.27.22.20:11434";
-              test = true;
-              local-phpactor = true;
               example = {
                 youCan = "add more than just booleans";
                 toThisSet = [
@@ -425,7 +405,7 @@
             };
 
             categories = {
-              ai = true;
+              copilot = true;
               behat = true;
               fileManager = true;
               general = true;
@@ -438,6 +418,7 @@
               test = true;
               symfony = true;
               worktree = true;
+              avante = false;
               avanteOpts = {
                 auto_suggestions_provider = "mistral";
                 load_env_keys = true;
