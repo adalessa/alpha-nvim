@@ -86,9 +86,11 @@ return {
           if vim.tbl_contains({ "markdown" }, vim.bo.filetype) then
             return { "buffer", "path", "snippets" }
           end
-
-          if require("nixCatsUtils").enableForCategory("ai") then
+          if require("nixCatsUtils").enableForCategory("copilot") then
             table.insert(sources, "copilot")
+          end
+
+          if require("nixCatsUtils").enableForCategory("avante") then
             table.insert(sources, "avante_commands")
             table.insert(sources, "avante_mentions")
             table.insert(sources, "avante_files")
