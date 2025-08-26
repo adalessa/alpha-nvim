@@ -36,4 +36,10 @@ return {
       { "ga", "<plug>(EasyAlign)", desc = "Easy Align", mode = { "n", "x" } },
     },
   },
+  {
+    "m4xshen/hardtime.nvim",
+    lazy = false,
+    dependencies = { "MunifTanjim/nui.nvim" },
+    opts = {},
+  },
 }
