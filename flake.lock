@@ -372,22 +372,6 @@
         "type": "github"
       }
     },
-    "plugins-dart.nvim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1756186286,
-        "narHash": "sha256-tnvPTfPL4SoJ6EkJQce/SbESO+Wu7LluD4L0DuSLezQ=",
-        "owner": "iofq",
-        "repo": "dart.nvim",
-        "rev": "0d171806cb19e608edae3f4a3a33a839a8b132f9",
-        "type": "github"
-      },
-      "original": {
-        "owner": "iofq",
-        "repo": "dart.nvim",
-        "type": "github"
-      }
-    },
     "plugins-git-worktree.nvim": {
       "flake": false,
       "locked": {
@@ -525,7 +509,6 @@
         "nixCats": "nixCats",
         "nixpkgs": "nixpkgs_4",
         "nixpkgs-stable": "nixpkgs-stable",
-        "plugins-dart.nvim": "plugins-dart.nvim",
         "plugins-git-worktree.nvim": "plugins-git-worktree.nvim",
         "plugins-laravel.nvim": "plugins-laravel.nvim",
         "plugins-menu": "plugins-menu",

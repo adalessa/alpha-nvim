@@ -17,7 +17,7 @@ return {
     scroll = { enabled = true },
     statuscolumn = { enabled = true },
     toggle = { enabled = true },
-    words = { enabled = true },
+    words = { enabled = false },
   },
   init = function()
     vim.api.nvim_create_autocmd("User", {
