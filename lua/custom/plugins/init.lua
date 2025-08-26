@@ -4,17 +4,6 @@ return {
   "tpope/vim-repeat",
   -- Lazy
   {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    opts = {},
-    lazy = false,
-    priority = 100,
-    config = function(_, opts)
-      require("catppuccin").setup(opts)
-      -- vim.cmd.colorscheme("catppuccin")
-    end,
-  },
-  {
     "catgoose/nvim-colorizer.lua",
     event = "BufReadPre",
     opts = { -- set to setup table
@@ -41,4 +30,10 @@ return {
   },
   { "nvzone/volt", lazy = true },
   { "nvzone/menu", lazy = true },
+  {
+    "junegunn/vim-easy-align",
+    keys = {
+      { "ga", "<plug>(EasyAlign)", desc = "Easy Align", mode = { "n", "x" } },
+    },
+  },
 }

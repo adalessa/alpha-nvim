@@ -6,9 +6,9 @@
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
 
-    # neovim-nightly-overlay = {
-    #   url = "github:nix-community/neovim-nightly-overlay";
-    # };
+    neovim-nightly-overlay = {
+      url = "github:nix-community/neovim-nightly-overlay";
+    };
 
     blade-treesitter = {
       url = "github:EmranMR/tree-sitter-blade";
@@ -205,7 +205,6 @@
             general = with pkgs.vimPlugins; [
               blink-cmp
               blink-compat
-              (catppuccin-nvim.overrideAttrs { pname = "catppuccin"; })
               conform-nvim
               direnv-vim
               fidget-nvim
@@ -238,6 +237,7 @@
               vim-dadbod-completion
               vim-dadbod-ui
               vim-dispatch
+              vim-easy-align
               vim-repeat
               vim-surround
               which-key-nvim
@@ -360,7 +360,7 @@
               # IMPORTANT:
               # your alias may not conflict with your other packages.
               aliases = [ "vim" ];
-              # neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.system}.neovim;
+              neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.system}.neovim;
             };
             # and a set of categories that you want
             # (and other information to pass to lua)
@@ -377,7 +377,6 @@
               python = true;
               javascript = true;
               obsidian = true;
-              ollama = "http://10.27.22.20:11434";
               test = true;
               example = {
                 youCan = "add more than just booleans";
@@ -414,7 +413,6 @@
               laravel = false;
               makeRunner = true;
               obsidian = true;
-              ollama = null;
               test = true;
               symfony = true;
               worktree = true;
