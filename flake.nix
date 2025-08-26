@@ -20,6 +20,11 @@
       flake = false;
     };
 
+    "plugins-marker-groups.nvim" = {
+      url = "github:jameswolensky/marker-groups.nvim";
+      flake = false;
+    };
+
     plugins-pomodoro = {
       url = "github:adalessa/pomodoro";
       flake = false;
@@ -233,6 +238,7 @@
               pkgs.neovimPlugins.pomodoro
               pkgs.neovimPlugins.snacks-nvim
               pkgs.neovimPlugins.volt
+              pkgs.neovimPlugins.marker-groups-nvim
               plenary-nvim
               vim-dadbod
               vim-dadbod-completion

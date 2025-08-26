@@ -404,6 +404,22 @@
         "type": "github"
       }
     },
+    "plugins-marker-groups.nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1755470069,
+        "narHash": "sha256-CtlX5pv3Gq4esHqRC6sA7TzQw1HbZ0zTHJG05nRQsd0=",
+        "owner": "jameswolensky",
+        "repo": "marker-groups.nvim",
+        "rev": "4805744e5e37b0b63eae104ce43a1219cb3d0dca",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jameswolensky",
+        "repo": "marker-groups.nvim",
+        "type": "github"
+      }
+    },
     "plugins-menu": {
       "flake": false,
       "locked": {
@@ -511,6 +527,7 @@
         "nixpkgs-stable": "nixpkgs-stable",
         "plugins-git-worktree.nvim": "plugins-git-worktree.nvim",
         "plugins-laravel.nvim": "plugins-laravel.nvim",
+        "plugins-marker-groups.nvim": "plugins-marker-groups.nvim",
         "plugins-menu": "plugins-menu",
         "plugins-neotest-pest": "plugins-neotest-pest",
         "plugins-php-lsp-utils": "plugins-php-lsp-utils",
