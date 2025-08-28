@@ -25,6 +25,11 @@
       flake = false;
     };
 
+    "plugins-opencode.nvim" = {
+      url = "github:NickvanDyke/opencode.nvim";
+      flake = false;
+    };
+
     plugins-pomodoro = {
       url = "github:adalessa/pomodoro";
       flake = false;
@@ -240,6 +245,7 @@
               pkgs.neovimPlugins.snacks-nvim
               pkgs.neovimPlugins.volt
               pkgs.neovimPlugins.marker-groups-nvim
+              pkgs.neovimPlugins.opencode-nvim
               plenary-nvim
               vim-dadbod
               vim-dadbod-completion

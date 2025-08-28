@@ -452,6 +452,22 @@
         "type": "github"
       }
     },
+    "plugins-opencode.nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1756305176,
+        "narHash": "sha256-QSiQdintJ16osTsJop+wA8TkWz4u8PKNGKKMOmXMKRU=",
+        "owner": "NickvanDyke",
+        "repo": "opencode.nvim",
+        "rev": "2fce982fc8080849afbe3db2ee4229ae9104af30",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NickvanDyke",
+        "repo": "opencode.nvim",
+        "type": "github"
+      }
+    },
     "plugins-php-lsp-utils": {
       "flake": false,
       "locked": {
@@ -530,6 +546,7 @@
         "plugins-marker-groups.nvim": "plugins-marker-groups.nvim",
         "plugins-menu": "plugins-menu",
         "plugins-neotest-pest": "plugins-neotest-pest",
+        "plugins-opencode.nvim": "plugins-opencode.nvim",
         "plugins-php-lsp-utils": "plugins-php-lsp-utils",
         "plugins-pomodoro": "plugins-pomodoro",
         "plugins-snacks.nvim": "plugins-snacks.nvim",
