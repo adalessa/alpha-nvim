@@ -247,6 +247,8 @@
               pkgs.neovimPlugins.marker-groups-nvim
               pkgs.neovimPlugins.opencode-nvim
               plenary-nvim
+              transparent-nvim
+              rose-pine
               vim-dadbod
               vim-dadbod-completion
               vim-dadbod-ui
