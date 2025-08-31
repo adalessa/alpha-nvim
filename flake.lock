@@ -372,6 +372,22 @@
         "type": "github"
       }
     },
+    "plugins-debugmaster.nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1752666818,
+        "narHash": "sha256-pdgS0z8KdLsl7VexbPaRPtYc2lebzAgTtM3B52IaCpQ=",
+        "owner": "miroshQa",
+        "repo": "debugmaster.nvim",
+        "rev": "3d144b98c2c23f39123fbf5f10fdff7d6480a0e6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "miroshQa",
+        "repo": "debugmaster.nvim",
+        "type": "github"
+      }
+    },
     "plugins-git-worktree.nvim": {
       "flake": false,
       "locked": {
@@ -541,6 +557,7 @@
         "nixCats": "nixCats",
         "nixpkgs": "nixpkgs_4",
         "nixpkgs-stable": "nixpkgs-stable",
+        "plugins-debugmaster.nvim": "plugins-debugmaster.nvim",
         "plugins-git-worktree.nvim": "plugins-git-worktree.nvim",
         "plugins-laravel.nvim": "plugins-laravel.nvim",
         "plugins-marker-groups.nvim": "plugins-marker-groups.nvim",

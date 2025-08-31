@@ -20,6 +20,11 @@
       flake = false;
     };
 
+    "plugins-debugmaster.nvim" = {
+      url = "github:miroshQa/debugmaster.nvim";
+      flake = false;
+    };
+
     "plugins-marker-groups.nvim" = {
       url = "github:jameswolensky/marker-groups.nvim";
       flake = false;
@@ -234,7 +239,8 @@
               neotest-plenary
               nvim-autopairs
               nvim-colorizer-lua
-              nvim-dap-ui
+              nvim-dap
+              pkgs.neovimPlugins.debugmaster-nvim
               nvim-lspconfig
               nvim-nio
               nvim-treesitter-textobjects

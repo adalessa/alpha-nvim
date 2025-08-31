@@ -79,6 +79,14 @@ if require("nixCatsUtils").enableForCategory("laravel") then
   }
 end
 
+local dmode_enabled = false
+vim.api.nvim_create_autocmd("User", {
+  pattern = "DebugModeChanged",
+  callback = function(args)
+    dmode_enabled = args.data.enabled
+  end,
+})
+
 return {
   "nvim-lualine/lualine.nvim",
   opts = {
@@ -86,6 +94,17 @@ return {
     theme = "auto",
     sections = {
       lualine_y = y_section,
+      lualine_a = {
+        {
+          "mode",
+          fmt = function(str)
+            return dmode_enabled and "DEBUG" or str
+          end,
+        --   color = function(tb)
+        --     return dmode_enabled and "dCursor" or tb
+        --   end,
+        },
+      },
       lualine_b = {
         "branch",
         "diff",
@@ -96,15 +115,15 @@ return {
           end,
           color = function()
             if require("pomodoro").type == "running" then
-              return {fg = "#40E0D0"}
+              return { fg = "#40E0D0" }
             else
-              return {fg = "#FF6347"}
+              return { fg = "#FF6347" }
             end
           end,
           cond = function()
             return require("pomodoro").hasTask()
-          end
-        }
+          end,
+        },
       },
       lualine_c = {
         "filename",

@@ -9,7 +9,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     map("gr", require("snacks").picker.lsp_references, "[G]oto [R]eferences")
     map("gI", require("snacks").picker.lsp_implementations, "[G]oto [I]mplementation")
     -- map("<leader>D", require("snacks").picker.lsp_type_definitions, "Type [D]efinition")
-    map("<leader>ds", require("snacks").picker.lsp_symbols, "[D]ocument [S]ymbols")
+    map("<leader>fS", require("snacks").picker.lsp_symbols, "[D]ocument [S]ymbols")
     map("<leader>ws", require("snacks").picker.lsp_workspace_symbols, "[W]orkspace [S]ymbols")
     map("<leader>vr", vim.lsp.buf.rename, "[R]e[n]ame")
     map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
