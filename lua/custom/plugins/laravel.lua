@@ -3,7 +3,6 @@ local dir_exists = vim.fn.isdirectory(dir_path) == 1
 
 return {
   "adalessa/laravel.nvim",
-  branch = "4.x",
   enabled = require("nixCatsUtils").enableForCategory("laravel"),
   dir = dir_exists and dir_path or nil,
   dependencies = {
