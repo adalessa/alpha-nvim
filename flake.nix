@@ -222,6 +222,7 @@
               blink-compat
               conform-nvim
               direnv-vim
+              diffview-nvim
               fidget-nvim
               FixCursorHold-nvim
               flash-nvim

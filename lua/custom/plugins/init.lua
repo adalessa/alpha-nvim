@@ -61,4 +61,7 @@ return {
       vim.cmd("colorscheme rose-pine")
     end,
   },
+  {
+    "sindrets/diffview.nvim",
+  },
 }
