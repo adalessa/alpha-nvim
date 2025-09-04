@@ -35,11 +35,6 @@
       flake = false;
     };
 
-    plugins-pomodoro = {
-      url = "github:adalessa/pomodoro";
-      flake = false;
-    };
-
     plugins-php-lsp-utils = {
       url = "github:adalessa/php-lsp-utils";
       flake = false;
@@ -248,7 +243,6 @@
               nvim-treesitter.withAllGrammars
               pkgs.neovimPlugins.menu
               pkgs.neovimPlugins.php-lsp-utils
-              pkgs.neovimPlugins.pomodoro
               pkgs.neovimPlugins.snacks-nvim
               pkgs.neovimPlugins.volt
               pkgs.neovimPlugins.marker-groups-nvim

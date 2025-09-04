@@ -109,21 +109,6 @@ return {
         "branch",
         "diff",
         "diagnostics",
-        {
-          function()
-            return require("pomodoro").getStatus()
-          end,
-          color = function()
-            if require("pomodoro").type == "running" then
-              return { fg = "#40E0D0" }
-            else
-              return { fg = "#FF6347" }
-            end
-          end,
-          cond = function()
-            return require("pomodoro").hasTask()
-          end,
-        },
       },
       lualine_c = {
         "filename",
