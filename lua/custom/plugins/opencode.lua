@@ -4,10 +4,10 @@ return {
     -- Recommended for better prompt input, and required to use opencode.nvim's embedded terminal — otherwise optional
     { "folke/snacks.nvim" },
   },
-  ---@type opencode.Opts
-  opts = {
-    -- Your configuration, if any — see lua/opencode/config.lua
-  },
+  init = function()
+    vim.g.opencode_opts = {}
+  end,
+  config = false,
   keys = {
     -- Recommended keymaps
     {
