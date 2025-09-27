@@ -37,12 +37,6 @@ return {
     },
   },
   {
-    "m4xshen/hardtime.nvim",
-    lazy = false,
-    dependencies = { "MunifTanjim/nui.nvim" },
-    opts = {},
-  },
-  {
     "xiyaowong/transparent.nvim",
     lazy = false,
     priority = 100,

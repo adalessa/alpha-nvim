@@ -224,7 +224,6 @@
               friendly-snippets
               gitsigns-nvim
               (harpoon2.overrideAttrs { pname = "harpoon"; })
-              hardtime-nvim
               lazydev-nvim
               lualine-nvim
               luasnip
