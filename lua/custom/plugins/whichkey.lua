@@ -11,7 +11,6 @@ return {
         { plugin = "laravel.nvim", icon = " ", color = "red" },
         { plugin = "nvim-dap-ui", icon = " ", color = "green" },
         { pattern = "obsidian", icon = " ", color = "blue" },
-        { pattern = "avante", icon = " ", color = "green" },
       },
     }
   },

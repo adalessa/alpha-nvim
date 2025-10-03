@@ -10,7 +10,6 @@ return {
     "MunifTanjim/nui.nvim",
     "nvim-lua/plenary.nvim",
     "nvim-neotest/nvim-nio",
-    "ravitemer/mcphub.nvim",
   },
   cmd = { "Laravel" },
   keys = {

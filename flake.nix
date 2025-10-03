@@ -65,14 +65,6 @@
       flake = false;
     };
 
-    mcp-hub-nvim = {
-      url = "github:/ravitemer/mcphub.nvim";
-    };
-
-    mcp-hub = {
-      url = "github:/ravitemer/mcp-hub";
-    };
-
     # see :help nixCats.flake.inputs
     # If you want your plugin to be loaded by the standard overlay,
     # i.e. if it wasnt on nixpkgs, but doesnt have an extra build step.
@@ -187,11 +179,6 @@
               tailwindcss-language-server
               emmet-language-server
             ];
-            avante = with pkgs; [
-              (inputs.mcp-hub.packages.${pkgs.system}.default)
-              nodejs
-              uv
-            ];
             general = with pkgs; [
               fd
               gh
@@ -266,13 +253,6 @@
             fileManager = with pkgs.vimPlugins; [
               oil-nvim
               mini-icons
-            ];
-
-            avante = with pkgs.vimPlugins; [
-              avante-nvim
-              (inputs.mcp-hub-nvim.packages.${pkgs.system}.default.overrideAttrs { pname = "mcphub.nvim"; })
-              nui-nvim
-              plenary-nvim
             ];
 
             copilot = with pkgs.vimPlugins; [
@@ -381,7 +361,6 @@
             # and a set of categories that you want
             # (and other information to pass to lua)
             categories = {
-              avante = false;
               copilot = true;
               customPlugins = true;
               fileManager = true;
@@ -432,49 +411,6 @@
               test = true;
               symfony = true;
               worktree = true;
-              avante = false;
-              avanteOpts = {
-                auto_suggestions_provider = "mistral";
-                load_env_keys = true;
-                provider = "claude";
-                behaviour = {
-                  enable_claude_text_editor_tool_mode = true;
-                  auto_apply_diff_after_generation = true;
-                };
-                providers = {
-                  mistral = {
-                    __inherited_from = "openai";
-                    endpoint = "https://delorean-app.prod.apps.auto1.team/proxy-api/mistral/v1";
-                    model = "mistral-small-latest";
-                  };
-                  claude = {
-                    endpoint = "https://delorean-app.prod.apps.auto1.team/proxy-api/anthropic/";
-                    model = "claude-3-7-sonnet-20250219";
-                    extra_request_body = {
-                      temperature = 0;
-                      max_tokens = 4096;
-                    };
-                  };
-                  claude-4 = {
-                    __inherited_from = "claude";
-                    endpoint = "https://delorean-app.prod.apps.auto1.team/proxy-api/anthropic/";
-                    model = "claude-sonnet-4-20250514";
-                    extra_request_body = {
-                      temperature = 0;
-                      max_tokens = 4096;
-                    };
-                  };
-                  openai = {
-                    endpoint = "https://delorean-app.prod.apps.auto1.team/proxy-api/openai/v1";
-                    model = "gpt-4o-mini";
-                    timeout = 30000;
-                    extra_request_body = {
-                      temperature = 0;
-                      max_tokens = 4096;
-                    };
-                  };
-                };
-              };
             };
           };
       };
