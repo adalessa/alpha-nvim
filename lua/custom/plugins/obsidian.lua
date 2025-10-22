@@ -40,10 +40,11 @@ return {
   },
   opts = {
     workspaces = vaults,
+    legacy_commands = false,
     pickers = { name = "snacks.pick" },
     completion = {
       nvim_cmp = false,
       blink = true,
-    }
+    },
   },
 }

@@ -373,15 +373,6 @@
               javascript = true;
               obsidian = true;
               test = true;
-              example = {
-                youCan = "add more than just booleans";
-                toThisSet = [
-                  "and the contents of this categories set"
-                  "will be accessible to your lua with"
-                  "nixCats('path.to.value')"
-                  "see :help nixCats"
-                ];
-              };
             };
           };
         nvim-work =
@@ -405,6 +396,7 @@
               general = true;
               go = true;
               python = true;
+              javascript = true;
               laravel = false;
               makeRunner = true;
               obsidian = true;
