@@ -179,6 +179,9 @@
               tailwindcss-language-server
               emmet-language-server
             ];
+            cpp = with pkgs; [
+              llvmPackages_20.clang-tools
+            ];
             general = with pkgs; [
               fd
               gh
@@ -366,6 +369,7 @@
               fileManager = true;
               general = true;
               gitPlugins = true;
+              cpp = true;
               go = true;
               rust = true;
               laravel = true;
