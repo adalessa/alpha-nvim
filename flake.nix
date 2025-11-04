@@ -180,7 +180,7 @@
               emmet-language-server
             ];
             cpp = with pkgs; [
-              llvmPackages_20.clang-tools
+              clang
             ];
             general = with pkgs; [
               fd
