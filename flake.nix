@@ -260,7 +260,7 @@
 
             copilot = with pkgs.vimPlugins; [
               blink-cmp-copilot
-              (inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.vimPlugins.copilot-lua)
+              (inputs.nixpkgs-stable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.vimPlugins.copilot-lua)
               nui-nvim
               plenary-nvim
             ];
