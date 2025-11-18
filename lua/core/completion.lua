@@ -70,7 +70,7 @@ return {
       -- elsewhere in your config, without redefining it, due to `opts_extend`
       sources = {
         default = function()
-          local sources = { "lsp", "path", "snippets", "buffer" }
+          local sources = { "lsp", "path", "snippets" }
           if
             require("nixCatsUtils").enableForCategory("laravel")
             and vim.bo.filetype == "php"
