@@ -5,7 +5,7 @@ return {
     { "folke/snacks.nvim" },
   },
   init = function()
-    vim.g.opencode_opts = {}
+    vim.g.opencode_opts = { provider = { enabled = "snacks", snacks = {} } }
   end,
   config = false,
   keys = {
