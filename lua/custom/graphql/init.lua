@@ -140,11 +140,19 @@ function M.pick(opts)
           )
         end
       end,
+      search_tests = function(picker, item)
+        picker:close()
+        if item then
+          local cwd = vim.uv.cwd()
+          Snacks.picker.grep({ search = item.value.name, pattern = ".feature", dirs = { cwd .. "/tests/Functional/features/" } })
+        end
+      end,
     },
     win = {
       input = {
         keys = {
           ["<c-o>"] = { "open_resolver", mode = { "n", "i" }, desc = "Open Resolver" },
+          ["<c-t>"] = { "search_tests", mode = { "n", "i" }, desc = "Search Test for the element" },
         },
       },
     },

@@ -216,22 +216,6 @@
         "type": "github"
       }
     },
-    "plugins-snacks.nvim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1763464072,
-        "narHash": "sha256-vRedYg29QGPGW0hOX9qbRSIImh1d/SoDZHImDF2oqKM=",
-        "owner": "folke",
-        "repo": "snacks.nvim",
-        "rev": "fe7cfe9800a182274d0f868a74b7263b8c0c020b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "folke",
-        "repo": "snacks.nvim",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "blade-treesitter": "blade-treesitter",
@@ -243,8 +227,7 @@
         "plugins-laravel.nvim": "plugins-laravel.nvim",
         "plugins-marker-groups.nvim": "plugins-marker-groups.nvim",
         "plugins-neotest-pest": "plugins-neotest-pest",
-        "plugins-opencode.nvim": "plugins-opencode.nvim",
-        "plugins-snacks.nvim": "plugins-snacks.nvim"
+        "plugins-opencode.nvim": "plugins-opencode.nvim"
       }
     }
   },

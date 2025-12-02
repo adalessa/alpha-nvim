@@ -39,11 +39,6 @@
       flake = false;
     };
 
-    "plugins-snacks.nvim" = {
-      url = "github:folke/snacks.nvim";
-      flake = false;
-    };
-
     "plugins-neotest-pest" = {
       url = "github:V13Axel/neotest-pest";
       flake = false;
@@ -190,8 +185,8 @@
               blink-cmp
               blink-compat
               conform-nvim
-              direnv-vim
               diffview-nvim
+              direnv-vim
               fidget-nvim
               FixCursorHold-nvim
               flash-nvim
@@ -209,17 +204,17 @@
               nvim-autopairs
               nvim-colorizer-lua
               nvim-dap
-              pkgs.neovimPlugins.debugmaster-nvim
               nvim-lspconfig
               nvim-nio
               nvim-treesitter-textobjects
               nvim-treesitter.withAllGrammars
-              pkgs.neovimPlugins.snacks-nvim
+              pkgs.neovimPlugins.debugmaster-nvim
               pkgs.neovimPlugins.marker-groups-nvim
               pkgs.neovimPlugins.opencode-nvim
               plenary-nvim
-              transparent-nvim
               rose-pine
+              snacks-nvim
+              transparent-nvim
               vim-dadbod
               vim-dadbod-completion
               vim-dadbod-ui
