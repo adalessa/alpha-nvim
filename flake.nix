@@ -219,10 +219,8 @@
               nvim-nio
               nvim-treesitter-textobjects
               nvim-treesitter.withAllGrammars
-              pkgs.neovimPlugins.menu
               pkgs.neovimPlugins.php-lsp-utils
               pkgs.neovimPlugins.snacks-nvim
-              pkgs.neovimPlugins.volt
               pkgs.neovimPlugins.marker-groups-nvim
               pkgs.neovimPlugins.opencode-nvim
               plenary-nvim

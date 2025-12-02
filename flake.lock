@@ -184,22 +184,6 @@
         "type": "github"
       }
     },
-    "plugins-menu": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1748784363,
-        "narHash": "sha256-4GfQ6Mo32rsoQAXKZF9Bpnm/sms2hfbrTldpLp5ySoY=",
-        "owner": "nvzone",
-        "repo": "menu",
-        "rev": "7a0a4a2896b715c066cfbe320bdc048091874cc6",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nvzone",
-        "repo": "menu",
-        "type": "github"
-      }
-    },
     "plugins-neotest-pest": {
       "flake": false,
       "locked": {
@@ -264,22 +248,6 @@
         "type": "github"
       }
     },
-    "plugins-volt": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1757754135,
-        "narHash": "sha256-5Xao1+QXZOvqwCXL6zWpckJPO1LDb8I7wtikMRFQ3Jk=",
-        "owner": "nvzone",
-        "repo": "volt",
-        "rev": "620de1321f275ec9d80028c68d1b88b409c0c8b1",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nvzone",
-        "repo": "volt",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "blade-treesitter": "blade-treesitter",
@@ -290,12 +258,10 @@
         "plugins-git-worktree.nvim": "plugins-git-worktree.nvim",
         "plugins-laravel.nvim": "plugins-laravel.nvim",
         "plugins-marker-groups.nvim": "plugins-marker-groups.nvim",
-        "plugins-menu": "plugins-menu",
         "plugins-neotest-pest": "plugins-neotest-pest",
         "plugins-opencode.nvim": "plugins-opencode.nvim",
         "plugins-php-lsp-utils": "plugins-php-lsp-utils",
-        "plugins-snacks.nvim": "plugins-snacks.nvim",
-        "plugins-volt": "plugins-volt"
+        "plugins-snacks.nvim": "plugins-snacks.nvim"
       }
     }
   },
