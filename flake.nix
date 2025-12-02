@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
 
     neovim-nightly-overlay = {
@@ -52,16 +51,6 @@
 
     "plugins-neotest-pest" = {
       url = "github:V13Axel/neotest-pest";
-      flake = false;
-    };
-
-    "plugins-menu" = {
-      url = "github:nvzone/menu";
-      flake = false;
-    };
-
-    "plugins-volt" = {
-      url = "github:nvzone/volt";
       flake = false;
     };
 
@@ -260,7 +249,7 @@
 
             copilot = with pkgs.vimPlugins; [
               blink-cmp-copilot
-              (inputs.nixpkgs-stable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.vimPlugins.copilot-lua)
+              copilot-lua
               nui-nvim
               plenary-nvim
             ];

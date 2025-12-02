@@ -28,8 +28,6 @@ return {
     -- use opts = {} for passing setup options
     -- this is equivalent to setup({}) function
   },
-  { "nvzone/volt", lazy = true },
-  { "nvzone/menu", lazy = true },
   {
     "junegunn/vim-easy-align",
     keys = {
@@ -52,7 +50,7 @@ return {
           transparency = true,
         },
       })
-      vim.cmd("colorscheme rose-pine")
+      vim.cmd("colorscheme rose-pine-moon")
     end,
   },
   {
