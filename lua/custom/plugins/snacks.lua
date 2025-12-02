@@ -55,6 +55,7 @@ return {
         map("<leader>fd", function() Snacks.picker.treesitter() end, "Find Treesitter Nodes")
         map("<leader>fb", function() Snacks.picker.buffers() end, "Find Buffers")
         map("<leader>fg", function() Snacks.picker.grep() end, "Find Grep")
+        map("<leader>fw", function() Snacks.picker.grep({search=vim.fn.expand("<cword>")}) end, "Find Grep current word")
         map("<leader>fh", function() Snacks.picker.help() end, "Find Help")
         map("<leader>fs", function() Snacks.picker.git_status() end, "Find Modified Files")
         map("<leader>:", function() Snacks.picker.command_history() end, "Find Command")
