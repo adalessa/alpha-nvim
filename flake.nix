@@ -34,11 +34,6 @@
       flake = false;
     };
 
-    plugins-php-lsp-utils = {
-      url = "github:adalessa/php-lsp-utils";
-      flake = false;
-    };
-
     "plugins-laravel.nvim" = {
       url = "github:adalessa/laravel.nvim";
       flake = false;
@@ -219,7 +214,6 @@
               nvim-nio
               nvim-treesitter-textobjects
               nvim-treesitter.withAllGrammars
-              pkgs.neovimPlugins.php-lsp-utils
               pkgs.neovimPlugins.snacks-nvim
               pkgs.neovimPlugins.marker-groups-nvim
               pkgs.neovimPlugins.opencode-nvim

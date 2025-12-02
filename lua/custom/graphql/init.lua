@@ -111,7 +111,33 @@ function M.pick(opts)
       open_resolver = function(picker, item)
         picker:close()
         if item then
-          require("php-lsp-utils").go_to("phpactor", item.value.fqn_class, item.value.method)
+          vim.system(
+            {
+              "php",
+              "-r",
+              'require "vendor/autoload.php";$c=$argv[1];$m=$argv[2];if(!class_exists($c)){exit(2);}$r=new ReflectionClass($c);$f=$r->getFileName();if(!$r->hasMethod($m)){echo $f."\\n";exit(1);}echo $f.":".$r->getMethod($m)->getStartLine()."\\n";',
+              item.value.fqn_class,
+              item.value.method,
+            },
+            { text = true },
+            vim.schedule_wrap(function(obj)
+              if obj.code == 2 then
+                vim.notify("Class not found: " .. item.value.fqn_class, vim.log.levels.ERROR)
+                return
+              end
+              if obj.code == 1 then
+                -- method not found just open
+                vim.cmd.edit(obj.stdout)
+                return
+              end
+
+              -- replace : by " +"
+              local location = vim.split(obj.stdout, ":")
+              local file = location[1]
+              local line = tonumber(location[2]) or 1
+              vim.cmd(string.format("edit +%d %s", line, file))
+            end)
+          )
         end
       end,
     },

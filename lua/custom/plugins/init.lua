@@ -20,7 +20,6 @@ return {
     end,
   },
   "echasnovski/mini.ai",
-  "adalessa/php-lsp-utils",
   {
     "windwp/nvim-autopairs",
     event = "InsertEnter",
