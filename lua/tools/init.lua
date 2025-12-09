@@ -33,3 +33,23 @@ if require("nixCatsUtils").enableForCategory("symfony") then
     })
   end, { desc = "Graphql Picker" })
 end
+
+vim.keymap.set({ "n" }, "<leader>ft", function()
+  Snacks.picker.files({
+    dirs = { "resources/generated/types" },
+    confirm = function(picker, item)
+      picker:close()
+      if item then
+        Snacks.picker.grep({
+          search = string.format("^%s:", vim.fs.basename(item.file):gsub("Type.php", "")),
+          paths = ".yaml",
+          dirs = {
+            "config/graphql/enums",
+            "config/graphql/types",
+            "config/graphql/input-types",
+          }
+        })
+      end
+    end,
+  })
+end)
