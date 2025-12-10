@@ -29,11 +29,6 @@
       flake = false;
     };
 
-    "plugins-opencode.nvim" = {
-      url = "github:NickvanDyke/opencode.nvim";
-      flake = false;
-    };
-
     "plugins-laravel.nvim" = {
       url = "github:adalessa/laravel.nvim";
       flake = false;
@@ -182,6 +177,14 @@
           # This is for plugins that will load at startup without using packadd:
           startupPlugins = {
             general = with pkgs.vimPlugins; [
+              lze
+            ];
+          };
+
+          # not loaded automatically at startup.
+          # use with packadd and an autocommand in config to achieve lazy loading
+          optionalPlugins = {
+            general = with pkgs.vimPlugins; [
               blink-cmp
               blink-compat
               conform-nvim
@@ -198,19 +201,16 @@
               luasnip
               mini-ai
               mini-icons
-              mini-pick
               neotest
               neotest-plenary
               nvim-autopairs
               nvim-colorizer-lua
               nvim-dap
-              nvim-lspconfig
               nvim-nio
               nvim-treesitter-textobjects
               nvim-treesitter.withAllGrammars
               pkgs.neovimPlugins.debugmaster-nvim
               pkgs.neovimPlugins.marker-groups-nvim
-              pkgs.neovimPlugins.opencode-nvim
               plenary-nvim
               rose-pine
               snacks-nvim
@@ -267,11 +267,6 @@
               obsidian-nvim
               plenary-nvim
             ];
-          };
-
-          # not loaded automatically at startup.
-          # use with packadd and an autocommand in config to achieve lazy loading
-          optionalPlugins = {
           };
 
           # shared libraries to be added to LD_LIBRARY_PATH
@@ -335,7 +330,7 @@
               # IMPORTANT:
               # your alias may not conflict with your other packages.
               aliases = [ "vim" ];
-              # neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.system}.neovim;
+              neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.neovim;
             };
             # and a set of categories that you want
             # (and other information to pass to lua)
