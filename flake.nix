@@ -14,21 +14,6 @@
       flake = false;
     };
 
-    "plugins-git-worktree.nvim" = {
-      url = "github:polarmutex/git-worktree.nvim";
-      flake = false;
-    };
-
-    "plugins-debugmaster.nvim" = {
-      url = "github:miroshQa/debugmaster.nvim";
-      flake = false;
-    };
-
-    "plugins-marker-groups.nvim" = {
-      url = "github:jameswolensky/marker-groups.nvim";
-      flake = false;
-    };
-
     "plugins-laravel.nvim" = {
       url = "github:adalessa/laravel.nvim";
       flake = false;
@@ -192,7 +177,6 @@
               direnv-vim
               fidget-nvim
               FixCursorHold-nvim
-              flash-nvim
               friendly-snippets
               gitsigns-nvim
               (harpoon2.overrideAttrs { pname = "harpoon"; })
@@ -201,16 +185,16 @@
               luasnip
               mini-ai
               mini-icons
+              mini-surround
               neotest
               neotest-plenary
               nvim-autopairs
               nvim-colorizer-lua
               nvim-dap
+              nvim-dap-view
               nvim-nio
               nvim-treesitter-textobjects
               nvim-treesitter.withAllGrammars
-              pkgs.neovimPlugins.debugmaster-nvim
-              pkgs.neovimPlugins.marker-groups-nvim
               plenary-nvim
               rose-pine
               snacks-nvim
@@ -221,7 +205,6 @@
               vim-dispatch
               vim-easy-align
               vim-repeat
-              vim-surround
               which-key-nvim
             ];
 
@@ -260,7 +243,6 @@
 
             symfony = with pkgs.vimPlugins; [
               neotest-phpunit
-              pkgs.neovimPlugins.git-worktree-nvim
             ];
 
             obsidian = with pkgs.vimPlugins; [

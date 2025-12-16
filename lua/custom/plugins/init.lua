@@ -1,5 +1,4 @@
 return {
-  "tpope/vim-surround",
   "tpope/vim-dispatch",
   "tpope/vim-repeat",
   -- Lazy
@@ -20,6 +19,7 @@ return {
     end,
   },
   "echasnovski/mini.ai",
+  "echasnovski/mini.surround",
   {
     "windwp/nvim-autopairs",
     event = "InsertEnter",
@@ -54,5 +54,6 @@ return {
   },
   {
     "sindrets/diffview.nvim",
+    cmd = { "DiffviewOpen" },
   },
 }
