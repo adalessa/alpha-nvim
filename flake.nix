@@ -191,7 +191,7 @@
               mini-ai
               mini-icons
               mini-surround
-              pkgs.neovimPlugins.laravel-nvim
+              pkgs.neovimPlugins.tokyodark-nvim
               neotest
               neotest-plenary
               nvim-autopairs
