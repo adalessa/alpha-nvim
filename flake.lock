@@ -152,6 +152,22 @@
         "type": "github"
       }
     },
+    "plugins-tokyodark.nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1763019717,
+        "narHash": "sha256-THvvevUwK3p/aZW+FI2RNnduqWBcmWF5tueYwEY43FI=",
+        "owner": "tiagovla",
+        "repo": "tokyodark.nvim",
+        "rev": "659aff3c73dc2e0159314050a81671f0b2eaad01",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tiagovla",
+        "repo": "tokyodark.nvim",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "blade-treesitter": "blade-treesitter",
@@ -159,7 +175,8 @@
         "nixCats": "nixCats",
         "nixpkgs": "nixpkgs_2",
         "plugins-laravel.nvim": "plugins-laravel.nvim",
-        "plugins-neotest-pest": "plugins-neotest-pest"
+        "plugins-neotest-pest": "plugins-neotest-pest",
+        "plugins-tokyodark.nvim": "plugins-tokyodark.nvim"
       }
     }
   },

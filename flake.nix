@@ -19,6 +19,11 @@
       flake = false;
     };
 
+    "plugins-tokyodark.nvim" = {
+      url = "github:tiagovla/tokyodark.nvim";
+      flake = false;
+    };
+
     "plugins-neotest-pest" = {
       url = "github:V13Axel/neotest-pest";
       flake = false;
@@ -186,6 +191,7 @@
               mini-ai
               mini-icons
               mini-surround
+              pkgs.neovimPlugins.laravel-nvim
               neotest
               neotest-plenary
               nvim-autopairs
@@ -196,7 +202,6 @@
               nvim-treesitter-textobjects
               nvim-treesitter.withAllGrammars
               plenary-nvim
-              rose-pine
               snacks-nvim
               transparent-nvim
               vim-dadbod
