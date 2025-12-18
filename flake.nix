@@ -234,7 +234,6 @@
               neotest-phpunit
               plenary-nvim
               nui-nvim
-              vim-dotenv
               promise-async
               (pkgs.neovimPlugins.neotest-pest.overrideAttrs { pname = "neotest-pest"; })
               (nvim-treesitter.grammarToPlugin (

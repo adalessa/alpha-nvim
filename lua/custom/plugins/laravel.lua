@@ -6,7 +6,6 @@ return {
   enabled = require("nixCatsUtils").enableForCategory("laravel"),
   dir = dir_exists and dir_path or nil,
   dependencies = {
-    "tpope/vim-dotenv",
     "MunifTanjim/nui.nvim",
     "nvim-lua/plenary.nvim",
     "nvim-neotest/nvim-nio",
