@@ -57,7 +57,6 @@ vim.lsp.config("*", {
 
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("phpactor")
-vim.lsp.enable("vue_ls")
 vim.lsp.enable("clangd", require("nixCatsUtils").enableForCategory("cpp"))
 vim.lsp.enable("ts_ls", require("nixCatsUtils").enableForCategory("javascript"))
 vim.lsp.enable("tailwind", require("nixCatsUtils").enableForCategory("javascript"))
@@ -69,3 +68,5 @@ vim.lsp.enable("rust_analyzer", require("nixCatsUtils").enableForCategory("rust"
 vim.lsp.enable("nixd", require("nixCatsUtils").isNixCats)
 vim.lsp.enable("rnix", not require("nixCatsUtils").isNixCats)
 vim.lsp.enable("nil_ls", not require("nixCatsUtils").isNixCats)
+
+require("core.lsp.vue")

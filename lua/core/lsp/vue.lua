@@ -1,5 +1,49 @@
----@type vim.lsp.Config
-return {
+local vue_language_server_path = require("nixCats").get("vue").path
+local tsserver_filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" }
+local vue_plugin = {
+  name = "@vue/typescript-plugin",
+  location = vue_language_server_path,
+  languages = { "vue" },
+  configNamespace = "typescript",
+}
+local vtsls_config = {
+  cmd = { "vtsls", "--stdio" },
+  init_options = {
+    hostInfo = "neovim",
+  },
+  settings = {
+    vtsls = {
+      tsserver = {
+        globalPlugins = {
+          vue_plugin,
+        },
+      },
+    },
+  },
+  filetypes = tsserver_filetypes,
+  root_dir = function(bufnr, on_dir)
+    -- The project root is where the LSP can be started from
+    -- As stated in the documentation above, this LSP supports monorepos and simple projects.
+    -- We select then from the project root, which is identified by the presence of a package
+    -- manager lock file.
+    local root_markers = { "package-lock.json", "yarn.lock", "pnpm-lock.yaml", "bun.lockb", "bun.lock" }
+    -- Give the root markers equal priority by wrapping them in a table
+    root_markers = vim.fn.has("nvim-0.11.3") == 1 and { root_markers, { ".git" } }
+      or vim.list_extend(root_markers, { ".git" })
+
+    -- exclude deno
+    if vim.fs.root(bufnr, { "deno.json", "deno.jsonc", "deno.lock" }) then
+      return
+    end
+
+    -- We fallback to the current working directory if no project root is found
+    local project_root = vim.fs.root(bufnr, root_markers) or vim.fn.getcwd()
+
+    on_dir(project_root)
+  end,
+}
+
+local vue_ls_config = {
   cmd = { "vue-language-server", "--stdio" },
   filetypes = { "vue" },
   root_markers = { "package.json" },
@@ -49,3 +93,7 @@ return {
     client.handlers["tsserver/request"] = typescriptHandler
   end,
 }
+-- nvim 0.11 or above
+vim.lsp.config("vtsls", vtsls_config)
+vim.lsp.config("vue_ls", vue_ls_config)
+vim.lsp.enable({ "vtsls", "vue_ls" }) -- If using `ts_ls` replace `vtsls` to `ts_ls`

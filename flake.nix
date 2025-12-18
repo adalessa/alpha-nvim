@@ -119,6 +119,7 @@
               phpactor
               blade-formatter
               vue-language-server
+              vtsls
             ];
             go = with pkgs; [
               gopls
@@ -334,6 +335,9 @@
               javascript = true;
               obsidian = true;
               test = true;
+              vue = {
+                path = "${pkgs.vue-language-server}/lib/language-tools/packages/language-server";
+              };
             };
           };
         nvim-work =
