@@ -51,31 +51,13 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 
-vim.api.nvim_create_user_command("LspStop", function(args)
-	local lsp_name = args.fargs[1]
-	local filter = {}
-	if lsp_name then
-		filter.name = lsp_name
-	end
-	vim.lsp.stop_client(vim.lsp.get_clients(filter))
-  vim.cmd("edit")
-end, {
-	nargs = "?",
-	complete = function()
-		return vim.iter(vim.lsp.get_clients())
-			:map(function(client)
-				return client.name
-			end)
-			:totable()
-	end,
-})
-
 vim.lsp.config("*", {
   capabilities = require("blink.cmp").get_lsp_capabilities(),
 })
 
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("phpactor")
+vim.lsp.enable("vue_ls")
 vim.lsp.enable("clangd", require("nixCatsUtils").enableForCategory("cpp"))
 vim.lsp.enable("ts_ls", require("nixCatsUtils").enableForCategory("javascript"))
 vim.lsp.enable("tailwind", require("nixCatsUtils").enableForCategory("javascript"))

@@ -118,7 +118,7 @@
             laravel = with pkgs; [
               phpactor
               blade-formatter
-              mago
+              vue-language-server
             ];
             go = with pkgs; [
               gopls
