@@ -7,7 +7,6 @@ return {
   keys = {
     { "-", "<cmd>Oil<cr>" },
   },
-  lazy = false,
   cmd = { "Oil" },
   -- Optional dependencies
   dependencies = { { "echasnovski/mini.icons", opts = {} } },
