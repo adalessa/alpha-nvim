@@ -69,4 +69,6 @@ vim.lsp.enable("nixd", require("nixCatsUtils").isNixCats)
 vim.lsp.enable("rnix", not require("nixCatsUtils").isNixCats)
 vim.lsp.enable("nil_ls", not require("nixCatsUtils").isNixCats)
 
-require("core.lsp.vue")
+if require("nixCatsUtils").enableForCategory("vue") then
+  require("core.lsp.vue")
+end
