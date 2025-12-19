@@ -10,6 +10,10 @@ return {
     "nvim-lua/plenary.nvim",
     "nvim-neotest/nvim-nio",
   },
+  event = {
+    "BufEnter composer.json",
+  },
+  ft = { "php", "vue", "blade" },
   cmd = { "Laravel" },
   keys = {
     {
@@ -99,7 +103,6 @@ return {
       noremap = true,
     },
   },
-  event = { "VeryLazy" },
   opts = {
     lsp_server = "phpactor",
     features = {
