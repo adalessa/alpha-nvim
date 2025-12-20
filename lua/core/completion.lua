@@ -21,7 +21,14 @@ return {
           require("luasnip.loaders.from_vscode").lazy_load()
         end,
       },
-      { "echasnovski/mini.icons", opts = {} },
+      {
+        "echasnovski/mini.icons",
+        opts = {
+          lsp = {
+            copilot = { glyph = "", hl = "MiniIconsRed" },
+          },
+        },
+      },
     },
 
     -- use a release tag to download pre-built binaries
@@ -79,19 +86,16 @@ return {
             table.insert(sources, "laravel")
           end
 
-          if vim.tbl_contains({ "sql", "mysq", "plsql" }, vim.bo.filetype) then
-            return { "dadbod", "snippets" }
-          end
-
-          if vim.tbl_contains({ "markdown" }, vim.bo.filetype) then
-            return { "buffer", "path", "snippets" }
-          end
           if require("nixCatsUtils").enableForCategory("copilot") then
             table.insert(sources, "copilot")
           end
 
           return sources
         end,
+        per_filetype = {
+          sql = { "dadbod" },
+          markdown = { "buffer", "path", "snippets" },
+        },
         providers = {
           laravel = {
             name = "laravel",
@@ -104,6 +108,15 @@ return {
             module = "blink-cmp-copilot",
             score_offset = 100,
             async = true,
+            transform_items = function(_, items)
+              local CompletionItemKind = require("blink.cmp.types").CompletionItemKind
+              local kind_idx = #CompletionItemKind + 1
+              CompletionItemKind[kind_idx] = "Copilot"
+              for _, item in ipairs(items) do
+                item.kind = kind_idx
+              end
+              return items
+            end,
           },
         },
       },
@@ -116,6 +129,28 @@ return {
 
             return ctx.mode ~= "cmdline" or not vim.tbl_contains({ "/", "?" }, vim.fn.getcmdtype())
           end,
+          draw = {
+            components = {
+              kind_icon = {
+                text = function(ctx)
+                  local kind_icon, _, _ = require("mini.icons").get("lsp", ctx.kind)
+                  return kind_icon
+                end,
+                -- (optional) use highlights from mini.icons
+                highlight = function(ctx)
+                  local _, hl, _ = require("mini.icons").get("lsp", ctx.kind)
+                  return hl
+                end,
+              },
+              kind = {
+                -- (optional) use highlights from mini.icons
+                highlight = function(ctx)
+                  local _, hl, _ = require("mini.icons").get("lsp", ctx.kind)
+                  return hl
+                end,
+              },
+            },
+          },
         },
       },
     },
