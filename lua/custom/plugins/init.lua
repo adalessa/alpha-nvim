@@ -18,8 +18,8 @@ return {
       vim.g.direnv_silent_load = 1
     end,
   },
-  "echasnovski/mini.ai",
-  "echasnovski/mini.surround",
+  { "echasnovski/mini.ai", opts = true },
+  { "echasnovski/mini.surround", opts = true },
   {
     "windwp/nvim-autopairs",
     event = "InsertEnter",
