@@ -24,6 +24,13 @@ return {
       desc = "Laravel: Open Laravel Picker",
     },
     {
+      "<leader>lu",
+      function()
+        Laravel.commands.run("hub")
+      end,
+      desc = "Laravel Artisan hub",
+    },
+    {
       "<c-g>",
       function()
         Laravel.commands.run("view:finder")
