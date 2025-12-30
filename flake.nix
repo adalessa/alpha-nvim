@@ -9,11 +9,6 @@
       url = "github:nix-community/neovim-nightly-overlay";
     };
 
-    blade-treesitter = {
-      url = "github:EmranMR/tree-sitter-blade";
-      flake = false;
-    };
-
     "plugins-laravel.nvim" = {
       url = "github:adalessa/laravel.nvim";
       flake = false;
@@ -237,13 +232,6 @@
               nui-nvim
               promise-async
               (pkgs.neovimPlugins.neotest-pest.overrideAttrs { pname = "neotest-pest"; })
-              (nvim-treesitter.grammarToPlugin (
-                pkgs.tree-sitter.buildGrammar {
-                  language = "blade";
-                  version = "0.11.0";
-                  src = inputs.blade-treesitter;
-                }
-              ))
             ];
 
             symfony = with pkgs.vimPlugins; [
