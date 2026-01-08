@@ -14,8 +14,8 @@
       flake = false;
     };
 
-    "plugins-tokyodark.nvim" = {
-      url = "github:tiagovla/tokyodark.nvim";
+    "plugins-koda.nvim" = {
+      url = "github:oskarnurm/koda.nvim";
       flake = false;
     };
 
@@ -187,7 +187,7 @@
               mini-ai
               mini-icons
               mini-surround
-              pkgs.neovimPlugins.tokyodark-nvim
+              pkgs.neovimPlugins.koda-nvim
               neotest
               neotest-plenary
               nvim-autopairs

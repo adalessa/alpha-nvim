@@ -129,7 +129,12 @@ return {
 
             return ctx.mode ~= "cmdline" or not vim.tbl_contains({ "/", "?" }, vim.fn.getcmdtype())
           end,
+          border = "rounded",
           draw = {
+            columns = {
+              { "label", "label_description", gap = 1 },
+              { "kind_icon", "kind", gap = 1 },
+            },
             components = {
               kind_icon = {
                 text = function(ctx)
@@ -150,6 +155,11 @@ return {
                 end,
               },
             },
+          },
+        },
+        documentation = {
+          window = {
+            border = "rounded",
           },
         },
       },
