@@ -152,7 +152,7 @@
               lazygit
               lua-language-server
               nixd
-              nixfmt-rfc-style
+              nixfmt
               stylua
             ];
             symfony = with pkgs; [
