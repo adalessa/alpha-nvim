@@ -136,6 +136,23 @@
         "type": "github"
       }
     },
+    "plugins-treesitter-textobjects": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1767434017,
+        "narHash": "sha256-5VeIAW09my+4fqXbzVG7RnLXrjpXAk/g2vd7RbhNws8=",
+        "owner": "nvim-treesitter",
+        "repo": "nvim-treesitter-textobjects",
+        "rev": "28a3494c075ef0f353314f627546537e43c09592",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nvim-treesitter",
+        "ref": "main",
+        "repo": "nvim-treesitter-textobjects",
+        "type": "github"
+      }
+    },
     "plugins-vesper.nvim": {
       "flake": false,
       "locked": {
@@ -159,6 +176,7 @@
         "nixpkgs": "nixpkgs_2",
         "plugins-laravel.nvim": "plugins-laravel.nvim",
         "plugins-neotest-pest": "plugins-neotest-pest",
+        "plugins-treesitter-textobjects": "plugins-treesitter-textobjects",
         "plugins-vesper.nvim": "plugins-vesper.nvim"
       }
     }

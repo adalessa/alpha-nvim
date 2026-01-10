@@ -9,6 +9,11 @@
       url = "github:nix-community/neovim-nightly-overlay";
     };
 
+    plugins-treesitter-textobjects = {
+      url = "github:nvim-treesitter/nvim-treesitter-textobjects/main";
+      flake = false;
+    };
+
     "plugins-laravel.nvim" = {
       url = "github:adalessa/laravel.nvim";
       flake = false;
@@ -154,6 +159,7 @@
               nixd
               nixfmt
               stylua
+              tree-sitter
             ];
             symfony = with pkgs; [
               phpactor
@@ -195,7 +201,7 @@
               nvim-dap
               nvim-dap-view
               nvim-nio
-              nvim-treesitter-textobjects
+              (pkgs.neovimPlugins.treesitter-textobjects.overrideAttrs { pname = "nvim-treesitter-textobjects"; })
               nvim-treesitter.withAllGrammars
               plenary-nvim
               snacks-nvim
@@ -396,7 +402,7 @@
             name = defaultPackageName;
             packages = [ defaultPackage ];
             inputsFrom = [ ];
-            shellHook = '''';
+            shellHook = "";
           };
         };
 
