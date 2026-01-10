@@ -104,22 +104,6 @@
         "type": "github"
       }
     },
-    "plugins-koda.nvim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1767985737,
-        "narHash": "sha256-qsXFcZV9gXglNkekke0FVW2HdpaYeauq9msQ4c83QZ0=",
-        "owner": "oskarnurm",
-        "repo": "koda.nvim",
-        "rev": "a6e51936a18fb37ff84ad239e4aa7cdd1c2576db",
-        "type": "github"
-      },
-      "original": {
-        "owner": "oskarnurm",
-        "repo": "koda.nvim",
-        "type": "github"
-      }
-    },
     "plugins-laravel.nvim": {
       "flake": false,
       "locked": {
@@ -152,14 +136,30 @@
         "type": "github"
       }
     },
+    "plugins-vesper.nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1745209613,
+        "narHash": "sha256-Tx621yTfTu3dLctXKPaJy6rZn2YvWP8eFAJoVvEeR/c=",
+        "owner": "datsfilipe",
+        "repo": "vesper.nvim",
+        "rev": "1717b1ad657c94bec3fc2bdebb0c55452d9fe46d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "datsfilipe",
+        "repo": "vesper.nvim",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "nixCats": "nixCats",
         "nixpkgs": "nixpkgs_2",
-        "plugins-koda.nvim": "plugins-koda.nvim",
         "plugins-laravel.nvim": "plugins-laravel.nvim",
-        "plugins-neotest-pest": "plugins-neotest-pest"
+        "plugins-neotest-pest": "plugins-neotest-pest",
+        "plugins-vesper.nvim": "plugins-vesper.nvim"
       }
     }
   },

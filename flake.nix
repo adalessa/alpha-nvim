@@ -14,8 +14,8 @@
       flake = false;
     };
 
-    "plugins-koda.nvim" = {
-      url = "github:oskarnurm/koda.nvim";
+    "plugins-vesper.nvim" = {
+      url = "github:datsfilipe/vesper.nvim";
       flake = false;
     };
 
@@ -187,7 +187,7 @@
               mini-ai
               mini-icons
               mini-surround
-              pkgs.neovimPlugins.koda-nvim
+              pkgs.neovimPlugins.vesper-nvim
               neotest
               neotest-plenary
               nvim-autopairs

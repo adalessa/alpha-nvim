@@ -40,11 +40,11 @@ return {
     config = true,
   },
   {
-    "oskarnurm/koda.nvim",
-    opts = { },
+    "datsfilipe/vesper.nvim",
+    opts = { transparent = false },
     config = function(_, opts)
-      require("koda").setup(opts)
-      vim.cmd.colorscheme("koda")
+      require("vesper").setup(opts)
+      vim.cmd.colorscheme("vesper")
     end,
   },
   {
