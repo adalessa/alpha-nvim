@@ -56,6 +56,7 @@ vim.lsp.config("*", {
 })
 
 vim.lsp.enable("lua_ls")
+vim.lsp.enable("emmylua_ls")
 vim.lsp.enable("phpactor")
 vim.lsp.enable("clangd", require("nixCatsUtils").enableForCategory("cpp"))
 vim.lsp.enable("ts_ls", require("nixCatsUtils").enableForCategory("javascript"))

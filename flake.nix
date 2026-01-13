@@ -156,6 +156,9 @@
               jq
               lazygit
               lua-language-server
+              emmylua-ls
+              emmylua-check
+              emmylua-doc-cli
               nixd
               nixfmt
               stylua
