@@ -14,6 +14,8 @@ return {
   filetypes = { "lua" },
   settings = {
     Lua = {
+      codeLens = { enable = true },
+      hint = { enable = true, semicolon = "Disable" },
       completion = {
         callSnippet = "Replace",
       },
