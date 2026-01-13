@@ -160,6 +160,7 @@
               nixfmt
               stylua
               tree-sitter
+              gcc
             ];
             symfony = with pkgs; [
               phpactor
@@ -354,7 +355,6 @@
               fileManager = true;
               general = true;
               go = true;
-              rust = true;
               python = true;
               javascript = true;
               laravel = false;
