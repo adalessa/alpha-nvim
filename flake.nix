@@ -335,7 +335,7 @@
             };
           };
         nvim-work =
-          { ... }:
+          { pkgs, ... }:
           {
             settings = {
               wrapRc = true;
@@ -345,7 +345,7 @@
                 "nvim"
                 "vim"
               ];
-              # neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.system}.neovim;
+              neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.neovim;
             };
 
             categories = {
@@ -354,6 +354,7 @@
               fileManager = true;
               general = true;
               go = true;
+              rust = true;
               python = true;
               javascript = true;
               laravel = false;

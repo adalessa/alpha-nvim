@@ -31,16 +31,15 @@ function M.pick(opts)
       :map(function(item)
         local elements = {}
 
-        local parsers = require("nvim-treesitter.parsers")
-        local parser = parsers.get_parser(item.bufnr)
-        local tree = parser:parse()[1]
+        local parser = vim.treesitter.get_parser(item.bufnr, "yaml", {})
+        parser:parse()
 
         if not query then
           vim.notify("No query found", vim.log.levels.ERROR)
           return
         end
 
-        for id, node in query:iter_captures(tree:root(), item.bufnr) do
+        for id, node in query:iter_captures(parser:trees()[1]:root(), item.bufnr) do
           if query.captures[id] == "mutation" then
             table.insert(elements, {
               value = get_node_text(node, item.bufnr),
