@@ -10,6 +10,9 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 vim.opt.inccommand = "split"
 
+vim.o.splitbelow = true
+vim.o.splitright = true
+
 vim.opt.scrolloff = 8
 
 vim.wo.number = true
