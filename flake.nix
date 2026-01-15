@@ -261,6 +261,8 @@
                 blink-cmp
                 blink-compat
                 luasnip
+                colorful-menu-nvim
+                cmp-cmdline
               ];
               treesitter = [
                 pkgs.neovimPlugins.treesitter-textobjects
@@ -271,9 +273,6 @@
                 vim-dadbod-completion
                 vim-dadbod-ui
               ];
-              snacks = [
-                snacks-nvim
-              ];
               always = [
                 direnv-vim
                 nvim-lspconfig
@@ -281,6 +280,7 @@
                 gitsigns-nvim
                 mini-surround
                 harpoon2
+                snacks-nvim
               ];
               extras = [
                 fidget-nvim
