@@ -103,6 +103,7 @@ return {
           menu = {
             draw = {
               treesitter = { "lsp" },
+              columns = { { "kind_icon" }, { "label", gap = 1 } },
               components = {
                 label = {
                   text = function(ctx)

@@ -304,6 +304,7 @@
 
             laravel = [
               pkgs.neovimPlugins.laravel-nvim
+              pkgs.vimPlugins.nui-nvim
             ];
           };
 
@@ -377,10 +378,12 @@
               neonixdev = true;
               debug = true;
               test = true;
+              format = true;
 
               copilot = true;
               cpp = true;
               go = true;
+              php = true;
               rust = true;
               laravel = true;
               python = true;
@@ -420,10 +423,12 @@
               neonixdev = true;
               debug = true;
               test = true;
+              format = true;
 
               copilot = true;
               behat = true;
               go = true;
+              php = true;
               javascript = true;
               laravel = false;
               makeRunner = true;
