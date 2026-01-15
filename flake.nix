@@ -45,12 +45,11 @@
     {
       self,
       nixpkgs,
-      nixCats,
       ...
     }@inputs:
     let
-      inherit (nixCats) utils;
-      luaPath = "${./.}";
+      inherit (inputs.nixCats) utils;
+      luaPath = ./.;
       forEachSystem = utils.eachSystem nixpkgs.lib.platforms.all;
       # the following extra_pkg_config contains any values
       # which you want to pass to the config set of nixpkgs
@@ -101,7 +100,7 @@
           categories,
           extra,
           name,
-          mkNvimPlugin,
+          mkPlugin,
           ...
         }@packageDef:
         {
@@ -115,139 +114,196 @@
           # at RUN TIME for plugins. Will be available to PATH within neovim terminal
           # this includes LSPs
           lspsAndRuntimeDeps = {
-            laravel = with pkgs; [
-              phpactor
-              blade-formatter
-              vue-language-server
-              vtsls
+            php = with pkgs; [
+              intelephense
             ];
+
             go = with pkgs; [
               gopls
               gotools
               golangci-lint
               golangci-lint-langserver
             ];
+
             rust = with pkgs; [
-              rustc
-              rustfmt
-              cargo
               clippy
               rust-analyzer
             ];
+
+            vue = with pkgs; [
+              vue-language-server
+              vtsls
+            ];
+
             python = with pkgs; [
-              python312
               python312Packages.python-lsp-server
             ];
+
             javascript = with pkgs; [
-              nodejs
               typescript-language-server
-              tailwindcss-language-server
-              emmet-language-server
             ];
+
+            css = with pkgs; [
+              tailwindcss-language-server
+            ];
+
             cpp = with pkgs; [
               clang
             ];
+            json = with pkgs; [
+              jq
+            ];
+
+            lint = with pkgs; { };
+
+            format = with pkgs; {
+              laravel = [
+                blade-formatter
+              ];
+              rust = [
+                rustfmt
+              ];
+              lua = [
+
+                stylua
+              ];
+            };
+
+            extra = with pkgs; [
+              lazygit
+            ];
+
+            debug = with pkgs; {
+              php = [
+                (import ./php-debug-adapter.nix { inherit pkgs fetchurl stdenv; })
+              ];
+            };
+
+            neonixdev = {
+              inherit (pkgs)
+                nix-doc
+                lua-language-server
+                nixd
+                nixfmt
+                ;
+            };
+
             general = with pkgs; [
               fd
-              gh
-              git
               imagemagick
-              (import ./php-debug-adapter.nix { inherit pkgs fetchurl stdenv; })
-              jq
-              lazygit
-              lua-language-server
-              nixd
-              nixfmt
-              stylua
               tree-sitter
               gcc
-            ];
-            symfony = with pkgs; [
-              phpactor
             ];
           };
 
           # This is for plugins that will load at startup without using packadd:
           startupPlugins = {
-            general = with pkgs.vimPlugins; [
-              lze
-            ];
+            general = with pkgs.vimPlugins; {
+              always = [
+                lze
+                lzextras
+                plenary-nvim
+                (nvim-notify.overrideAttrs { doCheck = false; }) # TODO: remove overrideAttrs after check is fixed
+              ];
+              debug = [
+                nvim-nio
+              ];
+              extra = [
+                oil-nvim
+                nvim-web-devicons
+              ];
+            };
+            themer =
+              with pkgs.vimPlugins;
+              (builtins.getAttr (categories.colorscheme or "onedark") {
+                # Theme switcher without creating a new category
+                "onedark" = onedark-nvim;
+                "catppuccin" = catppuccin-nvim;
+                "catppuccin-mocha" = catppuccin-nvim;
+                "tokyonight" = tokyonight-nvim;
+                "tokyonight-day" = tokyonight-nvim;
+                "vesper" = pkgs.neovimPlugins.vesper-nvim;
+              });
           };
 
           # not loaded automatically at startup.
           # use with packadd and an autocommand in config to achieve lazy loading
           optionalPlugins = {
-            general = with pkgs.vimPlugins; [
-              blink-cmp
-              blink-compat
+            debug = with pkgs.vimPlugins; {
+              default = [
+                nvim-dap
+                nvim-dap-view
+              ];
+            };
+
+            tests = with pkgs.vimPlugins; {
+              default = [
+                neotest
+              ];
+              lua = [ neotest-plenary ];
+              go = [ neotest-golang ];
+              php = [ neotest-phpunit ];
+              pest = [
+                pkgs.neovimPlugins.neotest-pest
+              ];
+            };
+
+            format = with pkgs.vimPlugins; [
               conform-nvim
-              diffview-nvim
-              direnv-vim
-              fidget-nvim
-              FixCursorHold-nvim
-              friendly-snippets
-              gitsigns-nvim
-              (harpoon2.overrideAttrs { pname = "harpoon"; })
+            ];
+
+            neonixdev = with pkgs.vimPlugins; [
               lazydev-nvim
-              lualine-nvim
-              luasnip
-              mini-ai
-              mini-icons
-              mini-surround
-              pkgs.neovimPlugins.vesper-nvim
-              neotest
-              neotest-plenary
-              nvim-autopairs
-              nvim-colorizer-lua
-              nvim-dap
-              nvim-dap-view
-              nvim-nio
-              (pkgs.neovimPlugins.treesitter-textobjects.overrideAttrs { pname = "nvim-treesitter-textobjects"; })
-              nvim-treesitter.withAllGrammars
-              plenary-nvim
-              snacks-nvim
-              transparent-nvim
-              vim-dadbod
-              vim-dadbod-completion
-              vim-dadbod-ui
-              vim-dispatch
-              vim-easy-align
-              vim-repeat
-              which-key-nvim
             ];
 
-            go = with pkgs.vimPlugins; [
-              neotest-golang
-            ];
-
-            fileManager = with pkgs.vimPlugins; [
-              oil-nvim
-              mini-icons
-            ];
+            general = with pkgs.vimPlugins; {
+              blink = [
+                blink-cmp
+                blink-compat
+                luasnip
+              ];
+              treesitter = [
+                pkgs.neovimPlugins.treesitter-textobjects
+                nvim-treesitter.withAllGrammars
+              ];
+              database = [
+                vim-dadbod
+                vim-dadbod-completion
+                vim-dadbod-ui
+              ];
+              snacks = [
+                snacks-nvim
+              ];
+              always = [
+                direnv-vim
+                nvim-lspconfig
+                lualine-nvim
+                gitsigns-nvim
+                mini-surround
+                harpoon2
+              ];
+              extras = [
+                fidget-nvim
+                which-key-nvim
+                vim-easy-align
+                nvim-colorizer-lua
+                diffview-nvim
+                mini-ai
+                undotree
+                indent-blankline-nvim
+                vim-startuptime
+                vim-dispatch
+                obsidian-nvim
+              ];
+            };
 
             copilot = with pkgs.vimPlugins; [
               blink-cmp-copilot
               copilot-lua
-              nui-nvim
-              plenary-nvim
             ];
 
-            laravel = with pkgs.vimPlugins; [
+            laravel = [
               pkgs.neovimPlugins.laravel-nvim
-              neotest-phpunit
-              plenary-nvim
-              nui-nvim
-              promise-async
-              (pkgs.neovimPlugins.neotest-pest.overrideAttrs { pname = "neotest-pest"; })
-            ];
-
-            symfony = with pkgs.vimPlugins; [
-              neotest-phpunit
-            ];
-
-            obsidian = with pkgs.vimPlugins; [
-              obsidian-nvim
-              plenary-nvim
             ];
           };
 
@@ -317,21 +373,31 @@
             # and a set of categories that you want
             # (and other information to pass to lua)
             categories = {
-              copilot = true;
-              customPlugins = true;
-              fileManager = true;
               general = true;
-              gitPlugins = true;
+              neonixdev = true;
+              debug = true;
+              test = true;
+
+              copilot = true;
               cpp = true;
               go = true;
               rust = true;
               laravel = true;
               python = true;
               javascript = true;
-              obsidian = true;
-              test = true;
+
               vue = {
                 path = "${pkgs.vue-language-server}/lib/language-tools/packages/language-server";
+              };
+
+              lspDebugMode = false;
+
+              themer = true;
+              colorscheme = "vesper";
+            };
+            extra = {
+              nixdExtras = {
+                nixpkgs = "import ${pkgs.path} {}";
               };
             };
           };
@@ -350,19 +416,25 @@
             };
 
             categories = {
+              general = true;
+              neonixdev = true;
+              debug = true;
+              test = true;
+
               copilot = true;
               behat = true;
-              fileManager = true;
-              general = true;
               go = true;
-              python = true;
               javascript = true;
               laravel = false;
               makeRunner = true;
-              obsidian = true;
-              test = true;
               symfony = true;
               worktree = true;
+            };
+
+            extra = {
+              nixdExtras = {
+                nixpkgs = "import ${pkgs.path} {}";
+              };
             };
           };
       };
