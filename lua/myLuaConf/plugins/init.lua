@@ -52,8 +52,11 @@ require("lze").load({
   { import = "myLuaConf.plugins.completion" },
   { import = "myLuaConf.plugins.laravel" },
   {
-    "mini-surround",
+    "mini.surround",
     event = "DeferredUIEnter",
+    after = function(plugin)
+      require("mini.surround").setup()
+    end,
   },
   {
     "undotree",
