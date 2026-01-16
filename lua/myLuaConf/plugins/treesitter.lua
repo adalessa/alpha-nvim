@@ -3,6 +3,9 @@ return {
     "nvim-treesitter",
     lazy = false,
     after = function(plugin)
+      -- the goal is to have the grammars that are already installed not new ones
+      require("nvim-treesitter").setup({ install_dir = nixCats.pawsible.allPlugins.start["nvim-treesitter-grammars"] })
+
       ---@param buf integer
       ---@param language string
       local function treesitter_try_attach(buf, language)

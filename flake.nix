@@ -191,7 +191,6 @@
               fd
               imagemagick
               tree-sitter
-              gcc
             ];
           };
 
