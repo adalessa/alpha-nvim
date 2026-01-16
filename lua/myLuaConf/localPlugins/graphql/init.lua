@@ -1,4 +1,4 @@
-require("custom.graphql.ts_query")
+require("myLuaConf.localPlugins.graphql.ts_query")
 local query = vim.treesitter.query.get("yaml", "GraphQL_endpoints")
 local get_node_text = vim.treesitter.get_node_text
 

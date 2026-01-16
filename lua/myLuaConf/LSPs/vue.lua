@@ -1,4 +1,9 @@
-local vue_language_server_path = require("nixCats").get("vue").path
+local vue_language_server_path = nixCats.extra("vue.path")
+
+if not vue_language_server_path then
+  return
+end
+
 local tsserver_filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" }
 local vue_plugin = {
   name = "@vue/typescript-plugin",
