@@ -190,7 +190,6 @@
             general = with pkgs; [
               fd
               imagemagick
-              tree-sitter
             ];
           };
 
