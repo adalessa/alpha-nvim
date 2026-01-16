@@ -107,9 +107,9 @@ return {
     map("<leader>fi", function()
       Snacks.picker.icons()
     end, "Find Icon")
-    map("<c-i>", function()
-      Snacks.picker.icons()
-    end, "Find Icon", { "i" })
+    -- map("<c-i>", function()
+    --   Snacks.picker.icons()
+    -- end, "Find Icon", { "i" })
 
     map("<F6>", function()
       Snacks.explorer()

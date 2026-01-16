@@ -381,15 +381,11 @@
               cpp = true;
               go = true;
               rust = true;
-              php = {
-                laravel = true;
-              };
+              php = true;
               python = true;
               javascript = true;
 
-              vue = {
-                path = "${pkgs.vue-language-server}/lib/language-tools/packages/language-server";
-              };
+              vue = true;
 
               lspDebugMode = false;
 
@@ -399,6 +395,9 @@
             extra = {
               nixdExtras = {
                 nixpkgs = "import ${pkgs.path} {}";
+              };
+              vue = {
+                path = "${pkgs.vue-language-server}/lib/language-tools/packages/language-server";
               };
             };
           };
@@ -429,10 +428,7 @@
               javascript = true;
 
               makefile = true;
-              php = {
-                laravel = false;
-                symfony = true;
-              };
+              php = true;
 
               lspDebugMode = false;
 

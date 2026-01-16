@@ -91,10 +91,69 @@ require("lze").load({
     },
   },
   {
+    "golangci_lint_ls",
+    for_cat = "go",
+    lsp = {
+      filetypes = { "go" },
+    },
+    -- if you don't provide the filetypes it asks lspconfig for them
+  },
+  {
+    "ts_ls",
+    for_cat = "javascript",
+    lsp = {
+      filetypes = {
+        "javascript",
+        "javascriptreact",
+        "javascript.jsx",
+        "typescript",
+        "typescriptreact",
+        "typescript.tsx",
+      },
+    },
+  },
+  {
+    "tailwindcss",
+    lsp = {
+      filetypes = {
+        "blade",
+        "vue",
+        "javascript",
+      },
+    },
+  },
+  {
     "intelephense",
     for_cat = "php",
     lsp = {
       filetypes = { "php", "blade" },
+    },
+  },
+  {
+    "clangd",
+    for_cat = "cpp",
+    lsp = {
+      cmd = {
+        "clangd",
+        "--compile-commands-dir=.",
+        "--background-index",
+        "--clang-tidy",
+        "--header-insertion=iwyu",
+        "--completion-style=detailed",
+        "--function-arg-placeholders",
+        "--fallback-style=llvm",
+      },
+      filetypes = {
+        "cpp",
+      },
+      capabilities = {
+        offsetEncoding = { "utf-16" },
+      },
+      init_options = {
+        usePlaceholders = true,
+        completeUnimported = true,
+        clangdFileStatus = true,
+      },
     },
   },
   {
@@ -144,3 +203,7 @@ require("lze").load({
     },
   },
 })
+
+if nixCats("vue") then
+  require("myLuaConf.LSPs.vue")
+end
