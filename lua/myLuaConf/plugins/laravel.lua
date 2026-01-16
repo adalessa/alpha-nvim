@@ -5,7 +5,7 @@ return {
   },
   {
     "laravel.nvim",
-    for_cat = "laravel",
+    for_cat = "php.laravel",
     event = {
       "BufEnter composer.json",
     },

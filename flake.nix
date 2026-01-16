@@ -114,9 +114,9 @@
           # at RUN TIME for plugins. Will be available to PATH within neovim terminal
           # this includes LSPs
           lspsAndRuntimeDeps = {
-            php = with pkgs; [
-              intelephense
-            ];
+            php = with pkgs; {
+              general = [ intelephense ];
+            };
 
             go = with pkgs; [
               gopls
@@ -164,7 +164,6 @@
                 rustfmt
               ];
               lua = [
-
                 stylua
               ];
             };
@@ -236,8 +235,8 @@
               ];
             };
 
-            tests = with pkgs.vimPlugins; {
-              default = [
+            testing = with pkgs.vimPlugins; {
+              always = [
                 neotest
               ];
               lua = [ neotest-plenary ];
@@ -302,7 +301,7 @@
               copilot-lua
             ];
 
-            laravel = [
+            php.laravel = [
               pkgs.neovimPlugins.laravel-nvim
               pkgs.vimPlugins.nui-nvim
             ];
@@ -377,15 +376,16 @@
               general = true;
               neonixdev = true;
               debug = true;
-              test = true;
+              testing = true;
               format = true;
 
               copilot = true;
               cpp = true;
               go = true;
-              php = true;
               rust = true;
-              laravel = true;
+              php = {
+                laravel = true;
+              };
               python = true;
               javascript = true;
 
@@ -422,18 +422,24 @@
               general = true;
               neonixdev = true;
               debug = true;
-              test = true;
+              testing = true;
               format = true;
 
               copilot = true;
-              behat = true;
+
               go = true;
-              php = true;
               javascript = true;
-              laravel = false;
-              makeRunner = true;
-              symfony = true;
-              worktree = true;
+
+              makefile = true;
+              php = {
+                laravel = false;
+                symfony = true;
+              };
+
+              lspDebugMode = false;
+
+              themer = true;
+              colorscheme = "vesper";
             };
 
             extra = {
