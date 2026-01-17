@@ -149,6 +149,7 @@
 
             cpp = with pkgs; [
               clang
+              clang-tools
             ];
             json = with pkgs; [
               jq
