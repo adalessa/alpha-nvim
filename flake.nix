@@ -292,6 +292,8 @@
                 vim-startuptime
                 vim-dispatch
                 obsidian-nvim
+                trouble-nvim
+                todo-comments-nvim
               ];
             };
 

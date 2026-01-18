@@ -10,6 +10,14 @@ return {
       "BufEnter composer.json",
     },
     ft = { "php", "vue", "blade" },
+    load = function(name)
+      -- check if the local path for development exist
+      local p = vim.fn.finddir("laravel.nvim", vim.fn.expand("~/code/plugins/"))
+      if p == "" then
+        vim.g.lze.load(name)
+      end
+      vim.opt.rtp:append(p)
+    end,
     keys = {
       {
         "<leader>ll",
