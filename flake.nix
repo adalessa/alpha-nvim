@@ -385,6 +385,7 @@
               python = true;
               javascript = true;
 
+              laravel = true;
               vue = true;
 
               lspDebugMode = false;
@@ -429,6 +430,9 @@
 
               makefile = true;
               php = true;
+
+              laravel = false;
+              vue = false;
 
               lspDebugMode = false;
 
