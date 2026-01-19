@@ -149,6 +149,7 @@ return {
               end
               return val
             end),
+            cucumber = { "buffer" },
           },
           providers = {
             path = {
