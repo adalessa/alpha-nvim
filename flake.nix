@@ -388,6 +388,7 @@
               python = true;
               javascript = true;
 
+              laravel = true;
               vue = true;
 
               lspDebugMode = false;
