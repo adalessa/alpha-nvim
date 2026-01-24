@@ -140,6 +140,10 @@ return {
             if nixCats("copilot") then
               table.insert(val, "copilot")
             end
+
+            if nixCats("neonixdev") then
+              table.insert(val, "lazydev")
+            end
           end),
           per_filetype = {
             sql = { "dadbod" },
@@ -174,6 +178,13 @@ return {
               name = "laravel",
               module = "blink.compat.source",
               score_offset = 95, -- show at a higher priority than lsp
+            },
+
+            lazydev = {
+              name = "LazyDev",
+              module = "lazydev.integrations.blink",
+              -- make lazydev completions top priority (see `:h blink.cmp`)
+              score_offset = 100,
             },
 
             dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },

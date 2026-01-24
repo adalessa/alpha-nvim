@@ -50,6 +50,11 @@ require("lze").load({
       require("lazydev").setup({
         library = {
           { words = { "nixCats" }, path = (nixCats.nixCatsPath or "") .. "/lua" },
+          { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+          { path = "${3rd}/love2d/library", words = { "love" } },
+          { path = nixCats.vimPackDir .. "/pack/myNeovimPackages/start" .. "plenary.nvim", words = { "describe" } },
+          { path = nixCats.vimPackDir .. "/pack/myNeovimPackages/opt" .."laravel.nvim", words = { "Laravel" } },
+          { path = nixCats.vimPackDir .. "/pack/myNeovimPackages/start" .. "nvim-nio", words = { "nio" } },
         },
       })
     end,
