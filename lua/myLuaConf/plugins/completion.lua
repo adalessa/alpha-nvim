@@ -140,16 +140,18 @@ return {
             if nixCats("copilot") then
               table.insert(val, "copilot")
             end
-
-            if nixCats("neonixdev") then
-              table.insert(val, "lazydev")
-            end
           end),
           per_filetype = {
             sql = { "dadbod" },
             php = tap({ inherit_defaults = true }, function(val)
               if nixCats("laravel") then
                 table.insert(val, "laravel")
+              end
+              return val
+            end),
+            lua = tap({ inherit_defaults = true }, function(val)
+              if nixCats("neonixdev") then
+                table.insert(val, "lazydev")
               end
               return val
             end),
