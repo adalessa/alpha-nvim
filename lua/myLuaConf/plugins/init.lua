@@ -306,10 +306,11 @@ require("lze").load({
         desc = "Select Harpoon 4",
       },
     },
+
+  },
     {
       "vim-dispatch",
       for_cat = "general.extra",
       cmd = { "Dispatch", "Make", "Focus", "Start" },
     },
-  },
 })
