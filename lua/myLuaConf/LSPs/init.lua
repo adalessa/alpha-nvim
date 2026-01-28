@@ -132,6 +132,13 @@ require("lze").load({
     for_cat = "php",
     lsp = {
       filetypes = { "php", "blade" },
+      settings = {
+        intelephense = {
+          files = {
+            maxSize = 5000000,
+          },
+        },
+      },
     },
   },
   {
