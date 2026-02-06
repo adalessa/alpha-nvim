@@ -306,11 +306,47 @@ require("lze").load({
         desc = "Select Harpoon 4",
       },
     },
-
   },
-    {
-      "vim-dispatch",
-      for_cat = "general.extra",
-      cmd = { "Dispatch", "Make", "Focus", "Start" },
+  {
+    "vim-dispatch",
+    for_cat = "general.extra",
+    cmd = { "Dispatch", "Make", "Focus", "Start" },
+  },
+  {
+    "vim-dadbod",
+    for_cat = "general.database",
+    dependency_of = { "vim-dadbod-ui" },
+  },
+  {
+    "vim-dadbod-completion",
+    for_cat = "general.database",
+    on_plugin = { "vim-dadbod" },
+  },
+  {
+    "vim-dadbod-ui",
+    for_cat = "general.database",
+    cmd = {
+      "DBUI",
+      "DBUIToggle",
+      "DBUIAddConnection",
+      "DBUIFindBuffer",
     },
+    keys = { { "<leader><leader>db", "<cmd>DBUIToggle<cr>" } },
+    before = function()
+      vim.g.db_ui_use_nerd_fonts = 1
+      vim.g.db_ui_show_database_icon = 1
+      vim.g.db_ui_force_echo_notifications = 1
+      vim.g.db_ui_win_position = "left"
+      vim.g.db_ui_winwidth = 80
+      vim.g.db_ui_table_helpers = {
+        mysql = {
+          Count = "select count(1) from {optional_schema}{table}",
+          Explain = "EXPLAIN {last_query}",
+        },
+        sqlite = {
+          Describe = "PRAGMA table_info({table})",
+        },
+      }
+    end,
+  },
 })
