@@ -52,9 +52,9 @@ require("lze").load({
           { words = { "nixCats" }, path = (nixCats.nixCatsPath or "") .. "/lua" },
           { path = "${3rd}/luv/library", words = { "vim%.uv" } },
           { path = "${3rd}/love2d/library", words = { "love" } },
-          { path = nixCats.vimPackDir .. "/pack/myNeovimPackages/start" .. "plenary.nvim", words = { "describe" } },
-          { path = nixCats.vimPackDir .. "/pack/myNeovimPackages/opt" .."laravel.nvim", words = { "Laravel" } },
-          { path = nixCats.vimPackDir .. "/pack/myNeovimPackages/start" .. "nvim-nio", words = { "nio" } },
+          { path = nixCats.vimPackDir .. "/pack/myNeovimPackages/start/plenary.nvim", words = { "describe" } },
+          { path = nixCats.vimPackDir .. "/pack/myNeovimPackages/opt/laravel.nvim", words = { "Laravel" } },
+          { path = nixCats.vimPackDir .. "/pack/myNeovimPackages/start/nvim-nio", words = { "nio" } },
         },
       })
     end,
@@ -72,9 +72,14 @@ require("lze").load({
       filetypes = { "lua" },
       settings = {
         Lua = {
+          codeLens = { enable = true },
+          hint = { enable = true, semicolon = "Disable" },
           runtime = { version = "LuaJIT" },
           formatters = {
             ignoreComments = true,
+          },
+          completion = {
+            callSnippet = "Replace",
           },
           signatureHelp = { enabled = true },
           diagnostics = {
@@ -103,20 +108,20 @@ require("lze").load({
     },
     -- if you don't provide the filetypes it asks lspconfig for them
   },
-  {
-    "ts_ls",
-    for_cat = "javascript",
-    lsp = {
-      filetypes = {
-        "javascript",
-        "javascriptreact",
-        "javascript.jsx",
-        "typescript",
-        "typescriptreact",
-        "typescript.tsx",
-      },
-    },
-  },
+  -- {
+  --   "ts_ls",
+  --   for_cat = "javascript",
+  --   lsp = {
+  --     filetypes = {
+  --       "javascript",
+  --       "javascriptreact",
+  --       "javascript.jsx",
+  --       "typescript",
+  --       "typescriptreact",
+  --       "typescript.tsx",
+  --     },
+  --   },
+  -- },
   {
     "tailwindcss",
     lsp = {

@@ -14,7 +14,6 @@ return {
     "BufEnter composer.json",
   },
   ft = { "php", "vue", "blade" },
-  cmd = { "Laravel" },
   keys = {
     {
       "<leader>ll",

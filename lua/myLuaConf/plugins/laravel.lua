@@ -100,7 +100,7 @@ return {
         "gf",
         function()
           local ok, res = pcall(function()
-            if Laravel.app("gf").cursorOnResource() then
+            if Laravel.app:isActive() and Laravel.app("gf").cursorOnResource() then
               return "<cmd>lua Laravel.commands.run('gf')<cr>"
             end
           end)
