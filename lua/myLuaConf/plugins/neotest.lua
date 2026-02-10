@@ -15,7 +15,7 @@ return {
     for_cat = "php",
     on_plugin = "neotest",
     after = function(plugin)
-      if nixCats("php.symfony") then
+      if nixCats("symfony") then
         table.insert(
           adapters,
           require("neotest-phpunit")({
