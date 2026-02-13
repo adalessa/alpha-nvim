@@ -433,6 +433,7 @@
 
               makefile = true;
               php = true;
+              symfony = true;
 
               lspDebugMode = false;
 

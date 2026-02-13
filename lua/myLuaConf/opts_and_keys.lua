@@ -13,6 +13,11 @@ vim.opt.inccommand = "split"
 vim.o.splitbelow = true
 vim.o.splitright = true
 
+vim.o.tabstop = 2
+vim.o.softtabstop = 2
+vim.o.expandtab = true
+vim.o.shiftwidth = 2
+
 vim.opt.scrolloff = 8
 
 vim.wo.number = true
