@@ -53,7 +53,7 @@ require("lze").load({
           { path = "${3rd}/luv/library", words = { "vim%.uv" } },
           { path = "${3rd}/love2d/library", words = { "love" } },
           { path = nixCats.vimPackDir .. "/pack/myNeovimPackages/start/plenary.nvim", words = { "describe" } },
-          { path = nixCats.vimPackDir .. "/pack/myNeovimPackages/opt/laravel.nvim", words = { "Laravel" } },
+          -- { path = nixCats.vimPackDir .. "/pack/myNeovimPackages/opt/laravel.nvim", words = { "Laravel" } },
           { path = nixCats.vimPackDir .. "/pack/myNeovimPackages/start/nvim-nio", words = { "nio" } },
           { path = nixCats.vimPackDir .. "/pack/myNeovimPackages/opt/neotest", words = { "neotest" } },
         },
