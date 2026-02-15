@@ -56,6 +56,7 @@ require("lze").load({
           -- { path = nixCats.vimPackDir .. "/pack/myNeovimPackages/opt/laravel.nvim", words = { "Laravel" } },
           { path = nixCats.vimPackDir .. "/pack/myNeovimPackages/start/nvim-nio", words = { "nio" } },
           { path = nixCats.vimPackDir .. "/pack/myNeovimPackages/opt/neotest", words = { "neotest" } },
+          { path = nixCats.vimPackDir .. "/pack/myNeovimPackages/opt/snacks", words = { "Snacks" } },
         },
       })
     end,

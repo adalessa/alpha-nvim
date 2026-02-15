@@ -21,6 +21,7 @@ return {
 
     -- need to improve. The nix config the MYVIMRC is not the same
     -- so everything is reported from this file not the expected.
+    ---@diagnostic disable-next-line: duplicate-set-field
     Snacks.debug.inspect = function(...)
       local MAX_INSPECT_LINES = 2000
       local len = select("#", ...) ---@type number
@@ -52,9 +53,11 @@ return {
       end)
     end
 
+    ---@diagnostic disable-next-line: duplicate-set-field
     _G.dd = function(...)
       Snacks.debug.inspect(...)
     end
+    ---@diagnostic disable-next-line: duplicate-set-field
     _G.bt = function()
       Snacks.debug.backtrace()
     end

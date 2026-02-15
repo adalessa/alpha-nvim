@@ -97,6 +97,13 @@ return {
         desc = "Laravel: Open Command Center",
       },
       {
+        "<leader>ly",
+        function()
+          Laravel.extensions.tinker()
+        end,
+        desc = "Laravel: Tinker",
+      },
+      {
         "gf",
         function()
           local ok, res = pcall(function()

@@ -349,4 +349,32 @@ require("lze").load({
       }
     end,
   },
+  {
+    "obsidian.nvim",
+    for_cat = "general.extra",
+    cmd = { "Obsidian" },
+    keys = {
+      { "<leader>ob", "<cmd> Obsidian<cr>", desc = "Obsidian" },
+    },
+    after = function()
+      require("obsidian").setup({
+        workspaces = {
+          {
+            name = "personal",
+            path = "~/vaults/personal",
+          },
+          {
+            name = "work",
+            path = "~/vaults/work",
+          },
+        },
+        legacy_commands = false,
+        pickers = { name = "snacks.pick" },
+        completion = {
+          nvim_cmp = false,
+          blink = true,
+        },
+      })
+    end,
+  },
 })
