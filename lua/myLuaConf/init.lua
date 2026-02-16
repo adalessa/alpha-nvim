@@ -38,7 +38,7 @@ if nixCats("makefile") then
   require("myLuaConf.tools.makefile")
 end
 
-if nixCats("php.symfony") then
+if nixCats("symfony") then
   vim.opt.path:append("tests/**/httpstubs/**/")
   require("myLuaConf.tools.graphql")
 end

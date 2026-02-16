@@ -51,7 +51,7 @@ return {
     "neotest",
     for_cat = "testing",
     after = function(plugin)
-      if nixCats("php.symfony") then
+      if nixCats("symfony") then
         table.insert(adapters, require("myLuaConf.localPlugins.neotest-behat"))
       end
       require("neotest").setup({
