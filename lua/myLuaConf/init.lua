@@ -33,7 +33,6 @@ if nixCats("format") then
 end
 
 -- Symfony and more related
-
 if nixCats("makefile") then
   require("myLuaConf.tools.makefile")
 end
