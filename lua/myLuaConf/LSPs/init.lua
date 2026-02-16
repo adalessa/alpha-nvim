@@ -56,7 +56,7 @@ require("lze").load({
           -- { path = nixCats.vimPackDir .. "/pack/myNeovimPackages/opt/laravel.nvim", words = { "Laravel" } },
           { path = nixCats.vimPackDir .. "/pack/myNeovimPackages/start/nvim-nio", words = { "nio" } },
           { path = nixCats.vimPackDir .. "/pack/myNeovimPackages/opt/neotest", words = { "neotest" } },
-          { path = nixCats.vimPackDir .. "/pack/myNeovimPackages/opt/snacks", words = { "Snacks" } },
+          { path = nixCats.vimPackDir .. "/pack/myNeovimPackages/opt/snacks.nvim", words = { "Snacks" } },
         },
       })
     end,
@@ -85,7 +85,7 @@ require("lze").load({
           },
           signatureHelp = { enabled = true },
           diagnostics = {
-            globals = { "nixCats", "vim" },
+            globals = { "nixCats", "vim", "dd", "bt", "tap", "Laravel", "Snacks" },
             disable = { "missing-fields" },
           },
           telemetry = { enabled = false },
