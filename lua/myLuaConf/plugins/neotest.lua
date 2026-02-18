@@ -6,7 +6,7 @@ end
 return {
   {
     "neotest-pest",
-    for_cat = "php.laravel",
+    for_cat = "laravel",
     on_plugin = "neotest",
     after = add_adapter,
   },

@@ -119,10 +119,44 @@ return {
         expr = true,
         noremap = true,
       },
+      {
+        "<leader>hn",
+        function()
+          Laravel.extensions.tester.near()
+        end,
+        desc = "Laravel: Test Near"
+      },
+      {
+        "<leader>hf",
+        function()
+          Laravel.extensions.tester.file()
+        end,
+        desc = "Laravel: Test File"
+      },
+      {
+        "<leader>ha",
+        function()
+          Laravel.extensions.tester.all()
+        end,
+        desc = "Laravel: Test All"
+      },
+      {
+        "<leader>hl",
+        function()
+          Laravel.extensions.tester.last()
+        end,
+        desc = "Laravel: Test Last"
+      },
+      {
+        "<leader>hq",
+        function()
+          Laravel.extensions.tester.failed()
+        end,
+        desc = "Laravel: Test Last"
+      },
     },
     after = function(plugin)
       require("laravel").setup({
-        lsp_server = "intelephense",
         features = {
           pickers = {
             provider = "snacks",
