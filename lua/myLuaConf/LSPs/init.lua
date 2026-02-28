@@ -176,6 +176,12 @@ require("lze").load({
     },
   },
   {
+    "gdscript",
+    lsp = {
+      filetypes = { "gdscript" },
+    },
+  },
+  {
     "nixd",
     enabled = catUtils.isNixCats and (nixCats("nix") or nixCats("neonixdev")) or false,
     lsp = {

@@ -5,28 +5,18 @@ end
 
 return {
   {
-    "neotest-pest",
-    for_cat = "laravel",
-    on_plugin = "neotest",
-    after = add_adapter,
-  },
-  {
     "neotest-phpunit",
-    for_cat = "php",
+    for_cat = "symfony",
     on_plugin = "neotest",
     after = function(plugin)
-      if nixCats("symfony") then
-        table.insert(
-          adapters,
-          require("neotest-phpunit")({
-            phpunit_cmd = function()
-              return "bin/phpunit"
-            end,
-          })
-        )
-      else
-        table.insert(adapters, require("neotest-phpunit"))
-      end
+      table.insert(
+        adapters,
+        require("neotest-phpunit")({
+          phpunit_cmd = function()
+            return "bin/phpunit"
+          end,
+        })
+      )
     end,
   },
   {
