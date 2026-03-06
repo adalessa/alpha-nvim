@@ -53,11 +53,5 @@ return function(_, bufnr)
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, "[W]orkspace [L]ist Folders")
 
-  -- autocmd BufEnter,CursorHold,InsertLeave <buffer> lua vim.lsp.codelens.refresh({ bufnr = 0 })
-  vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
-    buffer = bufnr,
-    callback = function()
-      vim.lsp.codelens.refresh({ bufnr = 0 })
-    end,
-  })
+  vim.lsp.codelens.enable(true, { bufnr = bufnr })
 end
