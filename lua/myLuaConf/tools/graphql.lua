@@ -5,9 +5,11 @@ vim.keymap.set({ "n" }, "<leader>fm", function()
       "_mutation.yaml",
       "_mutation_external_anonymous.yaml",
       "_mutation_public_api.yaml",
+      "_mutation_package_deal.yaml",
       "_query.yaml",
       "_query_external_anonymous.yaml",
       "_query_public_api.yaml",
+      "_query_package_deal.yaml",
     })
     :map(function(schema)
       return vim.fn.findfile(schema, "config/graphql")
