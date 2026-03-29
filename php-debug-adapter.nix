@@ -6,8 +6,8 @@ stdenv.mkDerivation {
   version = "1.33.1";
 
   src = fetchurl {
-    url = "https://github.com/xdebug/vscode-php-debug/releases/download/v1.33.1/php-debug-1.33.1.vsix";
-    sha256 = "sha256-oN9xhG8BkK/jLS9aRV4Ff+EHsLcWe60Z2GDlvgkh5HM=";
+    url = "https://github.com/xdebug/vscode-php-debug/releases/download/v1.40.0/php-debug-1.40.0.vsix";
+    sha256 = "sha256:07cc7de78fe796d45972e5fdcb5358bb926b0c6898c6e3c8352b356e0b429d60";
   };
 
   buildInputs = [ pkgs.unzip ];

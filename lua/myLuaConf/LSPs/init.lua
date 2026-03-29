@@ -165,6 +165,7 @@ require("lze").load({
       filetypes = {
         "cpp",
       },
+      on_attach = require("myLuaConf.LSPs.on_attach"),
       capabilities = {
         offsetEncoding = { "utf-16" },
       },
