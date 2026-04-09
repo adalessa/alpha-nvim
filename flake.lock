@@ -120,6 +120,38 @@
         "type": "github"
       }
     },
+    "plugins-nui-components.nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1742063284,
+        "narHash": "sha256-dq/HZ2EEbGu4uHEJQ4tJPSgIn72wga6Bf3ku3XvjKkY=",
+        "owner": "grapp-dev",
+        "repo": "nui-components.nvim",
+        "rev": "1654dd709f13874089eefc80d82e0eb667f7fdfb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "grapp-dev",
+        "repo": "nui-components.nvim",
+        "type": "github"
+      }
+    },
+    "plugins-scratch.nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1775727320,
+        "narHash": "sha256-EFo9PvKN8VofyUQhPldOcOfBuMbK2sKfZ7ZcrRU8+JM=",
+        "owner": "adalessa",
+        "repo": "scratch.nvim",
+        "rev": "150da7480eabfe2007fdeab910339b970efc633f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "adalessa",
+        "repo": "scratch.nvim",
+        "type": "github"
+      }
+    },
     "plugins-treesitter-textobjects": {
       "flake": false,
       "locked": {
@@ -159,6 +191,8 @@
         "nixCats": "nixCats",
         "nixpkgs": "nixpkgs_2",
         "plugins-laravel.nvim": "plugins-laravel.nvim",
+        "plugins-nui-components.nvim": "plugins-nui-components.nvim",
+        "plugins-scratch.nvim": "plugins-scratch.nvim",
         "plugins-treesitter-textobjects": "plugins-treesitter-textobjects",
         "plugins-vesper.nvim": "plugins-vesper.nvim"
       }

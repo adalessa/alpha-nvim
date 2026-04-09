@@ -118,14 +118,6 @@ return {
       Snacks.explorer()
     end, "Explorer", { "n", "i" })
 
-    -- Scratch
-    map("<leader>.", function()
-      Snacks.scratch()
-    end, "Open the scratch buffer")
-    map("<leader>S", function()
-      Snacks.scratch.select()
-    end, "Open the scratch buffer selector")
-
     -- Misc
     map("<leader>bd", function()
       Snacks.bufdelete()

@@ -377,4 +377,19 @@ require("lze").load({
       })
     end,
   },
+  {
+    "scratch.nvim",
+    for_cat = "general.extra",
+    after = function()
+      require("scratch").setup({})
+    end,
+    keys = {
+      {
+        "<leader>.",
+        function()
+          require("scratch").open()
+        end,
+      },
+    },
+  },
 })

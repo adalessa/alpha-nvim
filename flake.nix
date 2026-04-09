@@ -19,8 +19,18 @@
       flake = false;
     };
 
+    "plugins-scratch.nvim" = {
+      url = "github:adalessa/scratch.nvim";
+      flake = false;
+    };
+
     "plugins-vesper.nvim" = {
       url = "github:datsfilipe/vesper.nvim";
+      flake = false;
+    };
+
+    "plugins-nui-components.nvim" = {
+      url = "github:grapp-dev/nui-components.nvim";
       flake = false;
     };
 
@@ -273,6 +283,7 @@
                 snacks-nvim
               ];
               extras = [
+                pkgs.neovimPlugins.scratch-nvim
                 fidget-nvim
                 which-key-nvim
                 vim-easy-align
@@ -297,6 +308,7 @@
             php.laravel = [
               pkgs.neovimPlugins.laravel-nvim
               pkgs.vimPlugins.nui-nvim
+              pkgs.neovimPlugins.nui-components-nvim
             ];
           };
 
