@@ -399,7 +399,7 @@
               lspDebugMode = false;
 
               themer = true;
-              colorscheme = "vesper";
+              colorscheme = "catppuccin";
             };
             extra = {
               nixdExtras = {
