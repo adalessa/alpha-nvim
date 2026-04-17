@@ -120,6 +120,22 @@
         "type": "github"
       }
     },
+    "plugins-neotest-pest": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1773693664,
+        "narHash": "sha256-BJv981/wPG/1YjOcX/DFbRhbZbmV0TQoaRISP+DNW0E=",
+        "owner": "V13Axel",
+        "repo": "neotest-pest",
+        "rev": "3388a5f00001303020ce885e18007ccd1835212c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "V13Axel",
+        "repo": "neotest-pest",
+        "type": "github"
+      }
+    },
     "plugins-nui-components.nvim": {
       "flake": false,
       "locked": {
@@ -191,6 +207,7 @@
         "nixCats": "nixCats",
         "nixpkgs": "nixpkgs_2",
         "plugins-laravel.nvim": "plugins-laravel.nvim",
+        "plugins-neotest-pest": "plugins-neotest-pest",
         "plugins-nui-components.nvim": "plugins-nui-components.nvim",
         "plugins-scratch.nvim": "plugins-scratch.nvim",
         "plugins-treesitter-textobjects": "plugins-treesitter-textobjects",
