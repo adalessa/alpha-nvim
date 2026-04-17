@@ -59,15 +59,19 @@ require("lze").load({
       require("mini.surround").setup()
     end,
   },
+  -- {
+  --   "undotree",
+  --   for_cat = "general.extra",
+  --   cmd = { "UndotreeToggle", "UndotreeHide", "UndotreeShow", "UndotreeFocus", "UndotreePersistUndo" },
+  --   keys = { { "<leader>U", "<cmd>UndotreeToggle<CR>", mode = { "n" }, desc = "Undo Tree" } },
+  --   before = function(_)
+  --     vim.g.undotree_WindowLayout = 1
+  --     vim.g.undotree_SplitWidth = 40
+  --   end,
+  -- },
   {
-    "undotree",
-    for_cat = "general.extra",
-    cmd = { "UndotreeToggle", "UndotreeHide", "UndotreeShow", "UndotreeFocus", "UndotreePersistUndo" },
-    keys = { { "<leader>U", "<cmd>UndotreeToggle<CR>", mode = { "n" }, desc = "Undo Tree" } },
-    before = function(_)
-      vim.g.undotree_WindowLayout = 1
-      vim.g.undotree_SplitWidth = 40
-    end,
+    "nvim.undotree",
+    keys = {{"<leader>u", function() require("undotree").open() end, desc = "Undo Tree"}}
   },
   {
     "indent-blankline.nvim",
