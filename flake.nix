@@ -34,6 +34,11 @@
       flake = false;
     };
 
+    "plugins-neotest-pest" = {
+      url = "github:V13Axel/neotest-pest";
+      flake = false;
+    };
+
     # see :help nixCats.flake.inputs
     # If you want your plugin to be loaded by the standard overlay,
     # i.e. if it wasnt on nixpkgs, but doesnt have an extra build step.
@@ -245,7 +250,10 @@
               ];
               lua = [ neotest-plenary ];
               go = [ neotest-golang ];
-              php = [ neotest-phpunit ];
+              php = [
+                neotest-phpunit
+                pkgs.neovimPlugins.neotest-pest
+              ];
             };
 
             format = with pkgs.vimPlugins; [

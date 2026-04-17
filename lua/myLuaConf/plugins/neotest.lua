@@ -20,10 +20,31 @@ return {
     end,
   },
   {
-    "neotest-plenary",
+    "neotest-phpunit",
+    for_cat = "laravel",
+    on_plugin = "neotest",
+    after = function(plugin)
+      table.insert(
+        adapters,
+        require("neotest-phpunit")({
+          phpunit_cmd = function()
+            return Laravel("laravel.services.command_generator"):generate("artisan", { "test" })
+          end,
+        })
+      )
+    end,
+  },
+  {
+    "neotest-pest",
+    for_cat = "laravel",
     on_plugin = "neotest",
     after = add_adapter,
   },
+  -- {
+  --   "neotest-plenary",
+  --   on_plugin = "neotest",
+  --   after = add_adapter,
+  -- },
   {
     "neotest-golang",
     for_cat = "go",
