@@ -61,9 +61,6 @@ This configuration relies on several external tools and language servers to prov
 - [Tailwind CSS Language Server](https://github.com/tailwindlabs/tailwindcss-intellisense)
 - [Emmet Language Server](https://github.com/aca/emmet-ls)
 
-#### Symfony Development
-- [Phpactor](https://github.com/phpactor/phpactor)
-
 ## Español
 
 ### Introducción
@@ -121,6 +118,3 @@ Esta configuración depende de varias herramientas externas y servidores de leng
 - [Servidor de Lenguaje TypeScript](https://github.com/typescript-language-server/typescript-language-server)
 - [Servidor de Lenguaje Tailwind CSS](https://github.com/tailwindlabs/tailwindcss-intellisense)
 - [Servidor de Lenguaje Emmet](https://github.com/aca/emmet-ls)
-
-#### Desarrollo Symfony
-- [Phpactor](https://github.com/phpactor/phpactor)

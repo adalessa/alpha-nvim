@@ -418,48 +418,6 @@
               };
             };
           };
-        nvim-work =
-          { pkgs, ... }:
-          {
-            settings = {
-              wrapRc = true;
-              # IMPORTANT:
-              # your alias may not conflict with your other packages.
-              aliases = [
-                "nvim"
-                "vim"
-              ];
-              neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.neovim;
-            };
-
-            categories = {
-              general = true;
-              neonixdev = true;
-              debug = true;
-              testing = true;
-              format = true;
-
-              copilot = true;
-
-              go = true;
-              javascript = true;
-
-              makefile = true;
-              php = true;
-              symfony = true;
-
-              lspDebugMode = false;
-
-              themer = true;
-              colorscheme = "vesper";
-            };
-
-            extra = {
-              nixdExtras = {
-                nixpkgs = "import ${pkgs.path} {}";
-              };
-            };
-          };
       };
       # In this section, the main thing you will need to do is change the default package name
       # to the name of the packageDefinitions entry you wish to use as the default.

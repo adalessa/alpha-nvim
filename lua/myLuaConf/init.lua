@@ -31,13 +31,3 @@ end
 if nixCats("format") then
   require("myLuaConf.format")
 end
-
--- Symfony and more related
-if nixCats("makefile") then
-  require("myLuaConf.tools.makefile")
-end
-
-if nixCats("symfony") then
-  vim.opt.path:append("tests/**/httpstubs/**/")
-  require("myLuaConf.tools.graphql")
-end

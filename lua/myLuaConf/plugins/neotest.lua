@@ -6,21 +6,6 @@ end
 return {
   {
     "neotest-phpunit",
-    for_cat = "symfony",
-    on_plugin = "neotest",
-    after = function(plugin)
-      table.insert(
-        adapters,
-        require("neotest-phpunit")({
-          phpunit_cmd = function()
-            return "bin/phpunit"
-          end,
-        })
-      )
-    end,
-  },
-  {
-    "neotest-phpunit",
     for_cat = "laravel",
     on_plugin = "neotest",
     after = function(plugin)
@@ -62,9 +47,6 @@ return {
     "neotest",
     for_cat = "testing",
     after = function(plugin)
-      if nixCats("symfony") then
-        table.insert(adapters, require("myLuaConf.localPlugins.neotest-behat"))
-      end
       require("neotest").setup({
         adapters = adapters,
       })
