@@ -74,7 +74,7 @@ require("lze").load({
       filetypes = { "lua" },
       settings = {
         Lua = {
-          codeLens = { enable = true },
+          codeLens = { enable = false },
           hint = { enable = true, semicolon = "Disable" },
           runtime = { version = "LuaJIT" },
           formatters = {

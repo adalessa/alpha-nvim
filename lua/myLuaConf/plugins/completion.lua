@@ -178,7 +178,7 @@ return {
 
             laravel = {
               name = "laravel",
-              module = "blink.compat.source",
+              module = "laravel.extensions.completion.blink",
               score_offset = 95, -- show at a higher priority than lsp
             },
 
