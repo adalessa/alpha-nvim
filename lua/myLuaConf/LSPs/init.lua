@@ -134,20 +134,20 @@ require("lze").load({
       },
     },
   },
-  {
-    "intelephense",
-    for_cat = "php",
-    lsp = {
-      filetypes = { "php", "blade" },
-      settings = {
-        intelephense = {
-          files = {
-            maxSize = 5000000,
-          },
-        },
-      },
-    },
-  },
+  -- {
+  --   "intelephense",
+  --   for_cat = "php",
+  --   lsp = {
+  --     filetypes = { "php", "blade" },
+  --     settings = {
+  --       intelephense = {
+  --         files = {
+  --           maxSize = 5000000,
+  --         },
+  --       },
+  --     },
+  --   },
+  -- },
   {
     "clangd",
     for_cat = "cpp",
@@ -233,3 +233,11 @@ require("lze").load({
 if nixCats("vue") then
   require("myLuaConf.LSPs.vue")
 end
+
+vim.lsp.config['phpantom'] = {
+  cmd = { 'phpantom-lsp' },
+  filetypes = { 'php' },
+  root_markers = { 'composer.json', '.git' },
+  on_attach = require("myLuaConf.LSPs.on_attach"),
+}
+vim.lsp.enable('phpantom')

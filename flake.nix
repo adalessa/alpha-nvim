@@ -9,6 +9,8 @@
       url = "github:nix-community/neovim-nightly-overlay";
     };
 
+    phpantom.url = "github:adalessa/phpantom_lsp/add-flake";
+
     plugins-treesitter-textobjects = {
       url = "github:nvim-treesitter/nvim-treesitter-textobjects/main";
       flake = false;
@@ -125,7 +127,7 @@
           # this includes LSPs
           lspsAndRuntimeDeps = {
             php = with pkgs; {
-              general = [ intelephense ];
+              general = [ inputs.phpantom.packages.${pkgs.stdenv.hostPlatform.system}.phpantom-lsp ];
             };
 
             go = with pkgs; [

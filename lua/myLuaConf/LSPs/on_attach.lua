@@ -53,5 +53,5 @@ return function(_, bufnr)
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, "[W]orkspace [L]ist Folders")
 
-  vim.lsp.codelens.enable(true, { bufnr = bufnr })
+  -- vim.lsp.codelens.enable(true, { bufnr = bufnr })
 end
