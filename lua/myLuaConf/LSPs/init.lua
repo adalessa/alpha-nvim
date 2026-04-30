@@ -128,26 +128,13 @@ require("lze").load({
     "tailwindcss",
     lsp = {
       filetypes = {
+        "php",
         "blade",
         "vue",
         "javascript",
       },
     },
   },
-  -- {
-  --   "intelephense",
-  --   for_cat = "php",
-  --   lsp = {
-  --     filetypes = { "php", "blade" },
-  --     settings = {
-  --       intelephense = {
-  --         files = {
-  --           maxSize = 5000000,
-  --         },
-  --       },
-  --     },
-  --   },
-  -- },
   {
     "clangd",
     for_cat = "cpp",
