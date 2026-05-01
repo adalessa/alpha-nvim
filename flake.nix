@@ -310,11 +310,6 @@
               ];
             };
 
-            copilot = with pkgs.vimPlugins; [
-              blink-cmp-copilot
-              copilot-lua
-            ];
-
             php.laravel = [
               pkgs.neovimPlugins.laravel-nvim
               pkgs.vimPlugins.nui-nvim
@@ -394,7 +389,6 @@
               testing = true;
               format = true;
 
-              copilot = true;
               cpp = true;
               go = true;
               rust = true;

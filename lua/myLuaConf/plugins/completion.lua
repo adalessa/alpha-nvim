@@ -29,22 +29,6 @@ return {
     end,
   },
   {
-    "copilot.lua",
-    for_cat = "copilot",
-    dep_of = { "blink-cmp-copilot" },
-    after = function(plugin)
-      require("copilot").setup({
-        panel = { enabled = false },
-        suggestion = { enabled = false },
-      })
-    end,
-  },
-  {
-    "blink-cmp-copilot",
-    for_cat = "copilot",
-    dep_of = { "blink.cmp" },
-  },
-  {
     "blink.compat",
     for_cat = "general.blink",
     dep_of = { "cmp-cmdline" },
@@ -136,11 +120,7 @@ return {
           end,
         },
         sources = {
-          default = tap({ "lsp", "path", "snippets", "buffer", "omni" }, function(val)
-            if nixCats("copilot") then
-              table.insert(val, "copilot")
-            end
-          end),
+          default = { "lsp", "path", "snippets", "buffer", "omni" },
           per_filetype = {
             sql = { "dadbod" },
             php = tap({ inherit_defaults = true }, function(val)
@@ -190,22 +170,6 @@ return {
             },
 
             dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
-
-            copilot = {
-              name = "copilot",
-              module = "blink-cmp-copilot",
-              score_offset = 100,
-              async = true,
-              transform_items = function(_, items)
-                local CompletionItemKind = require("blink.cmp.types").CompletionItemKind
-                local kind_idx = #CompletionItemKind + 1
-                CompletionItemKind[kind_idx] = "Copilot"
-                for _, item in ipairs(items) do
-                  item.kind = kind_idx
-                end
-                return items
-              end,
-            },
           },
         },
       })
