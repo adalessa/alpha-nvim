@@ -9,7 +9,7 @@
       url = "github:nix-community/neovim-nightly-overlay";
     };
 
-    phpantom.url = "github:adalessa/phpantom_lsp/add-flake";
+    phpantom.url = "github:adalessa/phpantom_lsp/use-stub-lock";
 
     plugins-treesitter-textobjects = {
       url = "github:nvim-treesitter/nvim-treesitter-textobjects/main";
