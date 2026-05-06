@@ -202,6 +202,8 @@
 
             general = with pkgs; [
               fd
+              ripgrep
+              lazygit
               imagemagick
             ];
           };
