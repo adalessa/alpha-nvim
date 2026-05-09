@@ -1,8 +1,10 @@
+vim.diagnostic.config({ jump = { on_jump = vim.diagnostic.open_float } })
+
 vim.keymap.set({ "n" }, "<leader>vn", function()
-  vim.diagnostic.jump({ count = 1, float = true })
+  vim.diagnostic.jump({ count = 1 })
 end, { desc = "Jump to next diagnostic" })
 vim.keymap.set({ "n" }, "<leader>vp", function()
-  vim.diagnostic.jump({ count = -1, float = true })
+  vim.diagnostic.jump({ count = -1 })
 end, { desc = "Jump to previous diagnostic" })
 
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
