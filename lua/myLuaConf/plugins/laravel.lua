@@ -18,7 +18,8 @@ return {
       -- check if the local path for development exist
       local p = vim.fn.finddir("laravel.nvim", vim.fn.expand("~/code/plugins/"))
       if p == "" then
-        vim.g.lze.load(name)
+        vim.cmd.packadd(name)
+        return
       end
       vim.opt.rtp:append(p)
     end,
@@ -128,35 +129,35 @@ return {
         function()
           Laravel.extensions.tester.near()
         end,
-        desc = "Laravel: Test Near"
+        desc = "Laravel: Test Near",
       },
       {
         "<leader>hf",
         function()
           Laravel.extensions.tester.file()
         end,
-        desc = "Laravel: Test File"
+        desc = "Laravel: Test File",
       },
       {
         "<leader>ha",
         function()
           Laravel.extensions.tester.all()
         end,
-        desc = "Laravel: Test All"
+        desc = "Laravel: Test All",
       },
       {
         "<leader>hl",
         function()
           Laravel.extensions.tester.last()
         end,
-        desc = "Laravel: Test Last"
+        desc = "Laravel: Test Last",
       },
       {
         "<leader>hq",
         function()
           Laravel.extensions.tester.failed()
         end,
-        desc = "Laravel: Test Last"
+        desc = "Laravel: Test Last",
       },
     },
     after = function(plugin)

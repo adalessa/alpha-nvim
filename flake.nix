@@ -222,6 +222,7 @@
               ];
               extra = [
                 oil-nvim
+                vim-dotenv
                 nvim-web-devicons
               ];
             };
