@@ -4,10 +4,6 @@ return {
     dep_of = { "laravel.nvim" },
   },
   {
-    "nui-components.nvim",
-    dep_of = { "laravel.nvim" },
-  },
-  {
     "laravel.nvim",
     for_cat = "laravel",
     event = {

@@ -9,7 +9,7 @@
       url = "github:nix-community/neovim-nightly-overlay";
     };
 
-    phpantom.url = "github:adalessa/phpantom_lsp/use-stub-lock";
+    phpantom.url = "github:adalessa/phpantom_lsp";
 
     plugins-treesitter-textobjects = {
       url = "github:nvim-treesitter/nvim-treesitter-textobjects/main";
@@ -28,11 +28,6 @@
 
     "plugins-vesper.nvim" = {
       url = "github:datsfilipe/vesper.nvim";
-      flake = false;
-    };
-
-    "plugins-nui-components.nvim" = {
-      url = "github:grapp-dev/nui-components.nvim";
       flake = false;
     };
 
@@ -317,7 +312,6 @@
             php.laravel = [
               pkgs.neovimPlugins.laravel-nvim
               pkgs.vimPlugins.nui-nvim
-              pkgs.neovimPlugins.nui-components-nvim
             ];
           };
 
