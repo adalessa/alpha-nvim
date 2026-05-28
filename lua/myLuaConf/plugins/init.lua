@@ -397,4 +397,9 @@ require("lze").load({
       },
     },
   },
+  {
+    "vim-wakatime",
+    for_cat = "general.extra",
+    lazy = false,
+  },
 })
