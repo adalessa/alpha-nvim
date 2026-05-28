@@ -196,6 +196,10 @@
             };
 
             general = with pkgs; [
+              wakatime-cli
+              ghostscript
+              tetex
+              mermaid-cli
               fd
               ripgrep
               lazygit
@@ -293,6 +297,7 @@
               ];
               extras = [
                 pkgs.neovimPlugins.scratch-nvim
+                vim-wakatime
                 fidget-nvim
                 which-key-nvim
                 vim-easy-align
