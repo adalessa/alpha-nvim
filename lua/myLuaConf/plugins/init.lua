@@ -41,7 +41,7 @@ if nixCats("general.extra") then
       ["g\\"] = "actions.toggle_trash",
     },
   })
-  require("smear_cursor").setup();
+  require("smear_cursor").setup()
   vim.keymap.set("n", "-", "<cmd>Oil<CR>", { noremap = true, desc = "Open Parent Directory" })
   vim.keymap.set("n", "<leader>-", "<cmd>Oil .<CR>", { noremap = true, desc = "Open nvim root directory" })
 end
@@ -72,7 +72,13 @@ require("lze").load({
   -- },
   {
     "nvim.undotree",
-    keys = {{"<leader>u", function() require("undotree").open() end, desc = "Undo Tree"}}
+    keys = { {
+      "<leader>u",
+      function()
+        require("undotree").open()
+      end,
+      desc = "Undo Tree",
+    } },
   },
   {
     "indent-blankline.nvim",
@@ -401,5 +407,20 @@ require("lze").load({
     "vim-wakatime",
     for_cat = "general.extra",
     lazy = false,
+  },
+  {
+    "vim-easy-align",
+    for_cat = "general.extra",
+    keys = {
+      {
+        "<Enter>",
+        "<Plug>(EasyAlign)",
+        mode = "v",
+      },
+      {
+        "ga",
+        "<Plug>(EasyAlign)",
+      },
+    },
   },
 })
