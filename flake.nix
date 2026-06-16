@@ -223,7 +223,6 @@
                 oil-nvim
                 vim-dotenv
                 nvim-web-devicons
-                smear-cursor-nvim
               ];
             };
             themer =
