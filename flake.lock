@@ -46,11 +46,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1779494629,
-        "narHash": "sha256-VuZJ76qmY90clvY6RQfAPL5JHwhcf1jmyqBfKR7WQ7Q=",
+        "lastModified": 1781568293,
+        "narHash": "sha256-vU7/JL7CdTynIyZy3V25eYuJ7LmKZYcunGvBlkmQMK0=",
         "owner": "nix-community",
         "repo": "neovim-nightly-overlay",
-        "rev": "9b46852004ed151b36e424de6d529a231c622561",
+        "rev": "1bd96ec6e69835b5d296021484eabeb88e3518b1",
         "type": "github"
       },
       "original": {
@@ -62,11 +62,11 @@
     "neovim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1779493669,
-        "narHash": "sha256-09xuVobnmU/uZLUZLr/lb3tir2v0lwWEj92gGuJIdKU=",
+        "lastModified": 1781562567,
+        "narHash": "sha256-vOAV23S931lS7Htkc1amyXv8x9FQ3Cn0mZIBEDGO3Lc=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "f53d9ac90b7a5a0eefb22398a8ce4e249a3fc732",
+        "rev": "02b74153247df60c6770e1918db9ef2fd5f83058",
         "type": "github"
       },
       "original": {
@@ -92,11 +92,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1779414690,
-        "narHash": "sha256-gOTcX/9MZVMUE0Xvb4IEcv+0TQJkZFNEnL757ljU360=",
+        "lastModified": 1781454065,
+        "narHash": "sha256-d2xfDjnfRuf/xYGdu9VVRHiav/2w5hDL/5cw2TuVAXw=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "6dedf69f94d03cbe7bdde106f2d4c23ae2a853bf",
+        "rev": "9eac87a12312b8f60dd52e1c6e1a265f6fc7f5fc",
         "type": "github"
       },
       "original": {
@@ -108,11 +108,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1779475168,
-        "narHash": "sha256-gm3D4FF9EcZlXK/ZnsC6IYzpEQplOoT+LPTurzOPyrk=",
+        "lastModified": 1781454065,
+        "narHash": "sha256-d2xfDjnfRuf/xYGdu9VVRHiav/2w5hDL/5cw2TuVAXw=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "a0991c886dc83e6e9de01d5266e4842985b1850e",
+        "rev": "9eac87a12312b8f60dd52e1c6e1a265f6fc7f5fc",
         "type": "github"
       },
       "original": {
@@ -144,15 +144,15 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1779549169,
-        "narHash": "sha256-PhcaCOgen8qIEH64eIYVwy9Pp78ENkYqFUFK8PUtuig=",
-        "owner": "adalessa",
+        "lastModified": 1781280083,
+        "narHash": "sha256-Jpg+NIiuBpJoSNCESoRQxrbwK1601Y8Aj4OQGOQfziU=",
+        "owner": "PHPantom-dev",
         "repo": "phpantom_lsp",
-        "rev": "963374df964c8b214a95757d60b80a8392130ade",
+        "rev": "404b7dfcdf65a21777b3b4f15c39a239f58bfcb8",
         "type": "github"
       },
       "original": {
-        "owner": "adalessa",
+        "owner": "PHPantom-dev",
         "repo": "phpantom_lsp",
         "type": "github"
       }
@@ -160,11 +160,11 @@
     "plugins-laravel.nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1778566825,
-        "narHash": "sha256-yk7PfzocKLttQVj3cmnlbE0KbCVDqZrqqirg8KqGtfw=",
+        "lastModified": 1780831272,
+        "narHash": "sha256-+IfsTLCGBNEjZgHWWT8hvIri4R/ImfXM6/sumZyBcq4=",
         "owner": "adalessa",
         "repo": "laravel.nvim",
-        "rev": "ec571a95d45a2e20ff8b38f0f2ea3f5da14c7ac5",
+        "rev": "0c12031c8c049c423c6c31951beba721115ce6cc",
         "type": "github"
       },
       "original": {
@@ -186,22 +186,6 @@
       "original": {
         "owner": "V13Axel",
         "repo": "neotest-pest",
-        "type": "github"
-      }
-    },
-    "plugins-nui-components.nvim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1742063284,
-        "narHash": "sha256-dq/HZ2EEbGu4uHEJQ4tJPSgIn72wga6Bf3ku3XvjKkY=",
-        "owner": "grapp-dev",
-        "repo": "nui-components.nvim",
-        "rev": "1654dd709f13874089eefc80d82e0eb667f7fdfb",
-        "type": "github"
-      },
-      "original": {
-        "owner": "grapp-dev",
-        "repo": "nui-components.nvim",
         "type": "github"
       }
     },
@@ -262,7 +246,6 @@
         "phpantom": "phpantom",
         "plugins-laravel.nvim": "plugins-laravel.nvim",
         "plugins-neotest-pest": "plugins-neotest-pest",
-        "plugins-nui-components.nvim": "plugins-nui-components.nvim",
         "plugins-scratch.nvim": "plugins-scratch.nvim",
         "plugins-treesitter-textobjects": "plugins-treesitter-textobjects",
         "plugins-vesper.nvim": "plugins-vesper.nvim"
