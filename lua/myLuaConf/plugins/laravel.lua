@@ -4,6 +4,18 @@ return {
     dep_of = { "laravel.nvim" },
   },
   {
+    "laravel_tenant",
+    dep_of = { "laravel.nvim" },
+    load = function (name)
+      local p = vim.fn.finddir("laravel_tenant.nvim", vim.fn.expand("~/code/plugins/"))
+      if p == "" then
+        vim.cmd.packadd(name)
+        return
+      end
+      vim.opt.rtp:append(p)
+    end
+  },
+  {
     "laravel.nvim",
     for_cat = "laravel",
     event = {
