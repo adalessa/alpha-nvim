@@ -126,7 +126,7 @@ return {
       Snacks.rename.rename_file()
     end, "Rename file")
     map("<c-,>", function()
-      Snacks.terminal("claude")
+      Snacks.terminal("claude", { win = { style = "terminal" } })
     end, "Toggle Claude", { "n", "t" })
     map("<c-\\>", function()
       Snacks.terminal()
