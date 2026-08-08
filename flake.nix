@@ -143,7 +143,7 @@
             ];
 
             python = with pkgs; [
-              python312Packages.python-lsp-server
+              # python312Packages.python-lsp-server
             ];
 
             javascript = with pkgs; [
@@ -392,10 +392,10 @@
               format = true;
 
               cpp = true;
-              go = true;
+              go = false;
               rust = true;
               php = true;
-              python = true;
+              python = false;
               javascript = true;
               css = true;
 
