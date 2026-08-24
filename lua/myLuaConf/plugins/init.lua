@@ -52,6 +52,7 @@ require("lze").load({
   { import = "myLuaConf.plugins.completion" },
   { import = "myLuaConf.plugins.laravel" },
   { import = "myLuaConf.plugins.neotest" },
+  { import = "myLuaConf.plugins.database" },
   {
     "mini.surround",
     event = "DeferredUIEnter",
