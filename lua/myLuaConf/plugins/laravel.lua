@@ -163,6 +163,9 @@ return {
             provider = "snacks",
           },
         },
+        extensions = {
+          completion = { enable = false },
+        },
         user_commands = {
           composer = {
             quality = {

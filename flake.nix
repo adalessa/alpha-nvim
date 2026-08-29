@@ -11,6 +11,11 @@
 
     phpantom.url = "github:PHPantom-dev/phpantom_lsp";
 
+    laravel-lsp = {
+      url = "github:laravel/lsp";
+      flake = false;
+    };
+
     plugins-treesitter-textobjects = {
       url = "github:nvim-treesitter/nvim-treesitter-textobjects/main";
       flake = false;
@@ -110,6 +115,15 @@
           mkPlugin,
           ...
         }@packageDef:
+        let
+          laravel-lsp = pkgs.writeShellApplication {
+            name = "laravel-lsp";
+            runtimeInputs = [ pkgs.php ];
+            text = ''
+              exec php ${inputs.laravel-lsp}/builds/laravel-lsp "$@"
+            '';
+          };
+        in
         {
           # to define and use a new category, simply add a new list to a set here,
           # and later, you will include categoryname = true; in the set you
@@ -122,7 +136,10 @@
           # this includes LSPs
           lspsAndRuntimeDeps = {
             php = with pkgs; {
-              general = [ inputs.phpantom.packages.${pkgs.stdenv.hostPlatform.system}.phpantom-lsp ];
+              general = [
+                inputs.phpantom.packages.${pkgs.stdenv.hostPlatform.system}.phpantom-lsp
+                laravel-lsp
+              ];
             };
 
             go = with pkgs; [

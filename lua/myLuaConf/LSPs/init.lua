@@ -228,3 +228,11 @@ vim.lsp.config['phpantom'] = {
   on_attach = require("myLuaConf.LSPs.on_attach"),
 }
 vim.lsp.enable('phpantom')
+
+vim.lsp.config['laravel_lsp'] = {
+  cmd = { 'laravel-lsp' },
+  filetypes = { 'php', 'blade' },
+  root_markers = { 'artisan' },
+  on_attach = require("myLuaConf.LSPs.on_attach"),
+}
+vim.lsp.enable('laravel_lsp')

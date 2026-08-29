@@ -39,6 +39,22 @@
         "type": "github"
       }
     },
+    "laravel-lsp": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1786711554,
+        "narHash": "sha256-MRkLI0nCn18FE9HaHL/Ota3krw4vgkHJ15gTBOIAfXc=",
+        "owner": "laravel",
+        "repo": "lsp",
+        "rev": "eeade573ca268135fea5fea06b384790a59dc6a8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "laravel",
+        "repo": "lsp",
+        "type": "github"
+      }
+    },
     "neovim-nightly-overlay": {
       "inputs": {
         "flake-parts": "flake-parts",
@@ -240,6 +256,7 @@
     },
     "root": {
       "inputs": {
+        "laravel-lsp": "laravel-lsp",
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "nixCats": "nixCats",
         "nixpkgs": "nixpkgs_2",
