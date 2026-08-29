@@ -232,6 +232,7 @@
                 "onedark" = onedark-nvim;
                 "catppuccin" = catppuccin-nvim;
                 "catppuccin-mocha" = catppuccin-nvim;
+                "catppuccin-frappe" = catppuccin-nvim;
                 "tokyonight" = tokyonight-nvim;
                 "tokyonight-day" = tokyonight-nvim;
                 "vesper" = pkgs.neovimPlugins.vesper-nvim;
@@ -405,7 +406,7 @@
               lspDebugMode = false;
 
               themer = true;
-              colorscheme = "catppuccin";
+              colorscheme = "catppuccin-frappe";
             };
             extra = {
               nixdExtras = {
