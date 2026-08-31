@@ -31,11 +31,6 @@
       flake = false;
     };
 
-    "plugins-vesper.nvim" = {
-      url = "github:datsfilipe/vesper.nvim";
-      flake = false;
-    };
-
     "plugins-neotest-pest" = {
       url = "github:V13Axel/neotest-pest";
       flake = false;
@@ -252,7 +247,6 @@
                 "catppuccin-frappe" = catppuccin-nvim;
                 "tokyonight" = tokyonight-nvim;
                 "tokyonight-day" = tokyonight-nvim;
-                "vesper" = pkgs.neovimPlugins.vesper-nvim;
               });
           };
 
