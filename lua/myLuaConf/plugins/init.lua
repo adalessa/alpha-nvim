@@ -71,13 +71,15 @@ require("lze").load({
   -- },
   {
     "nvim.undotree",
-    keys = { {
-      "<leader>u",
-      function()
-        require("undotree").open()
-      end,
-      desc = "Undo Tree",
-    } },
+    keys = {
+      {
+        "<leader>u",
+        function()
+          require("undotree").open()
+        end,
+        desc = "Undo Tree",
+      },
+    },
   },
   {
     "indent-blankline.nvim",
@@ -368,22 +370,19 @@ require("lze").load({
     },
     after = function()
       require("obsidian").setup({
+        templates = {
+          folder = "~/vaults/templates",
+          date_format = "%Y-%m-%d-%a",
+          time_format = "%H:%M",
+        },
         workspaces = {
           {
             name = "personal",
             path = "~/vaults/personal",
           },
-          {
-            name = "work",
-            path = "~/vaults/work",
-          },
         },
         legacy_commands = false,
         pickers = { name = "snacks.pick" },
-        completion = {
-          nvim_cmp = false,
-          blink = true,
-        },
       })
     end,
   },
