@@ -13,6 +13,7 @@ else
       require("matugen").setup()
     end)
   )
+  matugen.setup()
 end
 
 -- NOTE: you can check if you included the category with the thing wherever you want.
