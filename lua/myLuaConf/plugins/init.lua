@@ -407,6 +407,13 @@ require("lze").load({
     lazy = false,
   },
   {
+    "nvim-colorizer.lua",
+    for_cat = "general.extra",
+    after = function()
+      require("colorizer").setup({})
+    end,
+  },
+  {
     "vim-easy-align",
     for_cat = "general.extra",
     keys = {
