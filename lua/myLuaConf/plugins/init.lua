@@ -11,6 +11,7 @@ else
     vim.schedule_wrap(function()
       package.loaded["matugen"] = nil
       require("matugen").setup()
+      require("lualine").setup()
     end)
   )
   matugen.setup()
