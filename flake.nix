@@ -235,6 +235,7 @@
                 oil-nvim
                 vim-dotenv
                 nvim-web-devicons
+                base16-nvim
               ];
             };
             themer =
