@@ -1,6 +1,21 @@
 local colorschemeName = nixCats("colorscheme") or "default"
 
-vim.cmd.colorscheme(colorschemeName)
+local ok, matugen = pcall(require, "matugen")
+if not ok then
+  vim.cmd.colorscheme(colorschemeName)
+else
+  local signal = vim.uv.new_signal()
+  _G.__matugen_signal = signal
+  signal:start(
+    "sigusr1",
+    vim.schedule_wrap(function()
+      package.loaded["matugen"] = nil
+      require("matugen").setup()
+      require("lualine").setup()
+    end)
+  )
+  matugen.setup()
+end
 
 -- NOTE: you can check if you included the category with the thing wherever you want.
 if nixCats("general.extra") then
@@ -369,6 +384,13 @@ require("lze").load({
     "vim-wakatime",
     for_cat = "general.extra",
     lazy = false,
+  },
+  {
+    "nvim-colorizer.lua",
+    for_cat = "general.extra",
+    after = function()
+      require("colorizer").setup({})
+    end,
   },
   {
     "vim-easy-align",
